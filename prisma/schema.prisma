@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Shipment {
+  id               String           @id @default(cuid())
+  trackingCode     String           @unique
+  origin           String           // Departure city / country
+  destination      String           // Arrival city / country
+  status           String           // Processing | In Transit | Out for Delivery | Delivered | On Hold | Cancelled
+  serviceType      String           @default("General")
+
+  // Sender / Shipper details
+  senderName       String?
+  senderAddress    String?
+  senderEmail      String?
+  senderPhone      String?
+
+  // Receiver / Consignee details
+  recipientName    String?
+  recipientAddress String?
+  recipientEmail   String?
+  recipientPhone   String?
+
+  // Package details
+  pieces           String?          // e.g. "3 boxes", "2 pallets"
+  weight           String?          // e.g. "18 kg"
+  dimensions       String?          // e.g. "40 × 30 × 20 cm"
+  packageType      String?          // Box | Pallet | Envelope | Crate | Drum | Roll | Other
+  packageDesc      String?          // Free-text description of contents
+  declaredValue    String?          // Declared value for insurance e.g. "USD 2,500"
+  specialHandling  String?          // Fragile | Keep Refrigerated | Keep Upright | etc.
+
+  // Delivery
+  estimatedDelivery DateTime?
+  signatureRequired Boolean          @default(false)
+
+  notes            String?
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  updates          ShipmentUpdate[]
+}
+
+model ShipmentUpdate {
+  id          String   @id @default(cuid())
+  shipmentId  String
+  shipment    Shipment @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+  status      String
+  location    String?
+  description String?
+  createdAt   DateTime @default(now())
+}
