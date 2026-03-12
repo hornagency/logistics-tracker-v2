@@ -26,12 +26,13 @@ npm install
 ```bash
 cp .env.local.example .env.local
 ```
-Edit `.env.local` with your preferred admin username, password, and a secret key.
+Edit `.env.local`: set `ADMIN_USERNAME`, `ADMIN_PASSWORD`, `ADMIN_SECRET`, and **`DATABASE_URL`** (a PostgreSQL connection string — use [Neon](https://neon.tech) or [Supabase](https://supabase.com) free tier for local dev).
 
 ### 3. Set up the database
 ```bash
-npm run db:push     # creates SQLite dev.db from the Prisma schema
-npm run db:seed     # loads 6 realistic demo shipments
+# Ensure DATABASE_URL is set in .env.local (PostgreSQL — e.g. Neon free tier, Supabase, or local Postgres)
+npm run db:push     # creates tables from the Prisma schema
+npm run db:seed     # loads 6 demo shipments
 ```
 
 ### 4. Run the dev server
@@ -42,13 +43,13 @@ npm run dev
 Open [http://localhost:3000](http://localhost:3000) for the public site.  
 Open [http://localhost:3000/admin](http://localhost:3000/admin) for the admin panel.
 
-**Default dev login:**
+**Default dev login** (from `.env.local.example` after you run `cp .env.local.example .env.local`):
 | Field | Value |
 |-------|-------|
 | Username | `admin` |
-| Password | `CrystalSky2025!` |
+| Password | *(set in `.env.local` — see `.env.local.example`)* |
 
-> These match the values in `.env.local`. Change them before going to production.
+> Use strong, unique credentials in production. Never commit `.env.local`.
 
 ---
 
@@ -140,7 +141,7 @@ In Vercel → **Project → Domains**, add your domain. Vercel handles SSL autom
 | Framework | Next.js 16 (App Router, Turbopack) |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
-| Database | Prisma ORM + SQLite (dev) / PostgreSQL (prod) |
+| Database | Prisma ORM + PostgreSQL (dev and prod — Neon, Supabase, Railway, or local) |
 | Auth | HMAC-SHA256 session tokens, HTTP-only cookies, Edge Proxy |
 | Images | Unsplash (via `unoptimized` Next.js Image) |
 
@@ -176,7 +177,7 @@ From any Invoice, Receipt, or Report page, click **Print / Download PDF**. The b
 | `ADMIN_USERNAME` | Yes | Login username for `/admin` |
 | `ADMIN_PASSWORD` | Yes | Login password for `/admin` |
 | `ADMIN_SECRET` | Yes | Secret key for signing session tokens (min 32 chars) |
-| `DATABASE_URL` | Prod only | PostgreSQL connection string |
+| `DATABASE_URL` | Yes | PostgreSQL connection string (dev and prod) |
 | `NEXT_PUBLIC_SITE_URL` | Prod only | Full URL of your site, used for `sitemap.xml` and `robots.txt` |
 
 Copy `.env.local.example` to `.env.local` to get started.

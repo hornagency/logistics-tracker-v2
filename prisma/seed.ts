@@ -1,4 +1,16 @@
 /// <reference types="node" />
+// Load .env.local (Next.js) and .env so Prisma sees DATABASE_URL when seed runs
+const path = require("path");
+const projectRoot = path.resolve(__dirname, "..");
+require("dotenv").config({ path: path.join(projectRoot, ".env.local") });
+require("dotenv").config({ path: path.join(projectRoot, ".env") });
+
+if (!process.env.DATABASE_URL) {
+  console.error("\n❌ DATABASE_URL is not set.");
+  console.error("   Add DATABASE_URL to .env.local (or .env) in the project root and try again.\n");
+  process.exit(1);
+}
+
 const { PrismaClient } = require("@prisma/client");
 
 const prisma = new PrismaClient();
@@ -207,7 +219,7 @@ async function main() {
       // Delivery
       estimatedDelivery: new Date("2026-02-28"),
       signatureRequired: true,
-      notes: undefined,
+      notes: null,
       updates: [
         { status: "Order received",         location: "Shenzhen Port",                              description: "Two containers booked and loaded" },
         { status: "In Transit",             location: "South China Sea",                            description: "Vessel: Evergreen Honour — departed Shenzhen" },
@@ -220,7 +232,10 @@ async function main() {
   ];
 
   for (const s of shipments) {
-    const { updates, ...shipmentData } = s;
+    const { updates, ...rest } = s;
+    const shipmentData = Object.fromEntries(
+      Object.entries(rest).filter(([, v]) => v !== undefined)
+    );
     const created = await prisma.shipment.upsert({
       where: { trackingCode: shipmentData.trackingCode },
       update: {},

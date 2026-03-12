@@ -7,8 +7,8 @@
     "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "db:push": "prisma db push",
-    "db:seed": "prisma generate && npx ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\",\"types\":[\"node\"]}' prisma/seed.ts",
+    "db:push": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/.bin/prisma db push",
+    "db:seed": "prisma generate && DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/.bin/ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\",\"types\":[\"node\"]}' prisma/seed.ts",
     "db:studio": "prisma studio"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10",
+    "dotenv": "^16.4.5",
     "eslint": "^9.39.4",
     "eslint-config-next": "^16.1.6",
     "postcss": "^8",
