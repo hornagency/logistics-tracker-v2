@@ -21,12 +21,22 @@ export async function GET(
 
   // Never expose the internal database id to the public
   return NextResponse.json({
-    trackingCode: shipment.trackingCode,
-    origin:       shipment.origin,
-    destination:  shipment.destination,
-    status:       shipment.status,
-    serviceType:  shipment.serviceType,
-    createdAt:    shipment.createdAt.toISOString(),
+    trackingCode:     shipment.trackingCode,
+    origin:           shipment.origin,
+    destination:      shipment.destination,
+    status:           shipment.status,
+    serviceType:      shipment.serviceType,
+    createdAt:        shipment.createdAt.toISOString(),
+    // Sender / Shipper (for tracking display)
+    senderName:       shipment.senderName    ?? null,
+    senderAddress:    shipment.senderAddress ?? null,
+    // Receiver / Consignee
+    recipientName:    shipment.recipientName    ?? null,
+    recipientAddress: shipment.recipientAddress ?? null,
+    // Delivery & insurance
+    signatureRequired: shipment.signatureRequired,
+    declaredValue:     shipment.declaredValue   ?? null,
+    estimatedDelivery: shipment.estimatedDelivery?.toISOString() ?? null,
     updates: shipment.updates.map((u) => ({
       status:      u.status,
       location:    u.location,

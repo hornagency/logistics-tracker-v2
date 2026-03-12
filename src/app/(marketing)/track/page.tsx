@@ -11,6 +11,13 @@ type ShipmentResult = {
   status: string;
   serviceType: string;
   createdAt: string;
+  senderName: string | null;
+  senderAddress: string | null;
+  recipientName: string | null;
+  recipientAddress: string | null;
+  signatureRequired: boolean;
+  declaredValue: string | null;
+  estimatedDelivery: string | null;
   updates: { status: string; location: string | null; description: string | null; createdAt: string }[];
 };
 
@@ -110,6 +117,56 @@ export default function TrackPage() {
               <div>
                 <p className="text-sm text-slate-500">Destination</p>
                 <p className="font-medium text-slate-900">{result.destination}</p>
+              </div>
+            </div>
+
+            {/* Sender / Receiver & insurance info */}
+            <div className="mt-6 grid gap-6 border-t border-slate-100 pt-6 sm:grid-cols-2">
+              <div className="rounded-lg bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sender / Shipper</p>
+                {result.senderName || result.senderAddress ? (
+                  <div className="mt-2 text-sm text-slate-700">
+                    {result.senderName && <p className="font-medium text-slate-900">{result.senderName}</p>}
+                    {result.senderAddress && <p className="mt-0.5">{result.senderAddress}</p>}
+                  </div>
+                ) : (
+                  <p className="mt-2 text-sm italic text-slate-400">Not provided</p>
+                )}
+              </div>
+              <div className="rounded-lg bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Receiver / Consignee</p>
+                {result.recipientName || result.recipientAddress ? (
+                  <div className="mt-2 text-sm text-slate-700">
+                    {result.recipientName && <p className="font-medium text-slate-900">{result.recipientName}</p>}
+                    {result.recipientAddress && <p className="mt-0.5">{result.recipientAddress}</p>}
+                  </div>
+                ) : (
+                  <p className="mt-2 text-sm italic text-slate-400">Not provided</p>
+                )}
+              </div>
+            </div>
+            <div className="mt-6 grid gap-4 border-t border-slate-100 pt-6 sm:grid-cols-3">
+              <div className="rounded-lg bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Signature required</p>
+                <p className="mt-2 font-medium text-slate-900">{result.signatureRequired ? "Yes" : "No"}</p>
+              </div>
+              <div className="rounded-lg bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Declared value</p>
+                {result.declaredValue ? (
+                  <p className="mt-2 font-medium text-sky-700">{result.declaredValue}</p>
+                ) : (
+                  <p className="mt-2 text-sm italic text-slate-400">Not provided</p>
+                )}
+              </div>
+              <div className="rounded-lg bg-slate-50 p-4">
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Estimated delivery</p>
+                {result.estimatedDelivery ? (
+                  <p className="mt-2 font-medium text-slate-900">
+                    {new Date(result.estimatedDelivery).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}
+                  </p>
+                ) : (
+                  <p className="mt-2 text-sm italic text-slate-400">Not provided</p>
+                )}
               </div>
             </div>
             {result.updates.length > 0 && (
