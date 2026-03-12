@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Suspense } from "react";
 import { CslLogo } from "@/components/CslLogoMark";
@@ -15,7 +15,6 @@ function safRedirect(value: string | null): string {
 }
 
 function LoginForm() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const from = safRedirect(searchParams.get("from"));
 
@@ -39,8 +38,9 @@ function LoginForm() {
         setError(data.error ?? "Invalid credentials");
         return;
       }
-      router.push(from);
-      router.refresh();
+      // Full page navigation so middleware and server see the new session cookie immediately
+      window.location.href = from;
+      return;
     } catch {
       setError("Unable to reach server. Please try again.");
     } finally {

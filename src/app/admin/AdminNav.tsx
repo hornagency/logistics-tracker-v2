@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 import { CslLogoMark } from "@/components/CslLogoMark";
 
 const NAV_ITEMS = [
@@ -46,14 +46,22 @@ const NAV_ITEMS = [
 
 export function AdminNav() {
   const pathname = usePathname();
-  const router = useRouter();
   const [loggingOut, setLoggingOut] = useState(false);
+
+  // Reset "Signing out" when route changes (e.g. landed on login, or came back after login)
+  useEffect(() => {
+    setLoggingOut(false);
+  }, [pathname]);
 
   async function handleLogout() {
     setLoggingOut(true);
-    await fetch("/api/admin/auth/logout", { method: "POST" });
-    router.push("/admin/login");
-    router.refresh();
+    try {
+      await fetch("/api/admin/auth/logout", { method: "POST" });
+      // Full page navigation so the login page sees the cleared cookie and doesn't show stale nav state
+      window.location.href = "/admin/login";
+    } catch {
+      setLoggingOut(false);
+    }
   }
 
   return (
