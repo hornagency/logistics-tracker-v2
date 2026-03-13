@@ -55,3 +55,13 @@ model ShipmentUpdate {
   description String?
   createdAt   DateTime @default(now())
 }
+
+// Singleton: one row for public contact section (Email Us, Call Us, Office Hours). Managed from admin.
+model ContactSettings {
+  id                String   @id @default(cuid())
+  email             String   @default("contact@crystalskylogistics.com")
+  phone             String   @default("+1 (555) 000-0000")
+  officeHoursLine1  String   @default("Mon – Fri, 8 am to 6 pm GMT")
+  officeHoursLine2  String?  @default("Shipment tracking: 24/7")
+  updatedAt         DateTime @updatedAt
+}

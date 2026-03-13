@@ -247,6 +247,20 @@ async function main() {
     console.log("✓", created.trackingCode, `— ${created.status}`);
   }
 
+  // Ensure default contact settings exist (singleton)
+  const existingContact = await prisma.contactSettings.findFirst();
+  if (!existingContact) {
+    await prisma.contactSettings.create({
+      data: {
+        email: "contact@crystalskylogistics.com",
+        phone: "+1 (555) 000-0000",
+        officeHoursLine1: "Mon – Fri, 8 am to 6 pm GMT",
+        officeHoursLine2: "Shipment tracking: 24/7",
+      },
+    });
+    console.log("✓ Contact settings (default)");
+  }
+
   console.log("\nSeed complete. 6 demo shipments ready.");
 }
 

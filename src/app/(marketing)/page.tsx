@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getContactSettings } from "@/lib/contact";
 import { HeroSlider } from "@/components/HeroSlider";
 import { TrackTraceWidget } from "@/components/TrackTraceWidget";
 
@@ -101,7 +102,8 @@ const TESTIMONIALS = [
   },
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
+  const contact = await getContactSettings();
   return (
     <>
       <HeroSlider />
@@ -267,7 +269,7 @@ export default function HomePage() {
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-3">
             <a
-              href="mailto:contact@crystalskylogistics.com"
+              href={`mailto:${contact.email}`}
               className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:bg-white/10"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
@@ -277,11 +279,11 @@ export default function HomePage() {
               </span>
               <div>
                 <p className="font-semibold text-white">Email Us</p>
-                <p className="mt-1 text-sm text-slate-400">contact@crystalskylogistics.com</p>
+                <p className="mt-1 text-sm text-slate-400">{contact.email}</p>
               </div>
             </a>
             <a
-              href="tel:+15550000000"
+              href={`tel:${contact.phone.replace(/\s/g, "")}`}
               className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-8 text-center transition hover:bg-white/10"
             >
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/20 text-primary">
@@ -291,7 +293,7 @@ export default function HomePage() {
               </span>
               <div>
                 <p className="font-semibold text-white">Call Us</p>
-                <p className="mt-1 text-sm text-slate-400">+1 (555) 000-0000</p>
+                <p className="mt-1 text-sm text-slate-400">{contact.phone}</p>
               </div>
             </a>
             <div className="flex flex-col items-center gap-3 rounded-2xl border border-white/10 bg-white/5 p-8 text-center">
@@ -302,8 +304,8 @@ export default function HomePage() {
               </span>
               <div>
                 <p className="font-semibold text-white">Office Hours</p>
-                <p className="mt-1 text-sm text-slate-400">Mon – Fri, 8 am to 6 pm GMT</p>
-                <p className="mt-0.5 text-sm text-slate-400">Shipment tracking: 24/7</p>
+                <p className="mt-1 text-sm text-slate-400">{contact.officeHoursLine1}</p>
+                {contact.officeHoursLine2 && <p className="mt-0.5 text-sm text-slate-400">{contact.officeHoursLine2}</p>}
               </div>
             </div>
           </div>
