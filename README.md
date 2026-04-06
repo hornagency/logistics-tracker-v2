@@ -1,6 +1,39 @@
-# Crystal Sky Logistics
+# Vectora Logistics (`logistics-tracker-v2`)
 
-A full-stack logistics management and customer-facing tracking platform built with Next.js 16, Prisma, and Tailwind CSS.
+A full-stack logistics management and customer-facing tracking platform built with Next.js 16, Prisma, and Tailwind CSS. Branded for **Vectora Logistics** (teal theme, `VLA-` tracking codes).
+
+This project is meant to live in **its own GitHub repository** and **its own Vercel project** (separate from any template or parent repo).
+
+### Connect your own GitHub repository
+
+The git remote `origin` is intentionally **not** set. The previous template remote is kept as **`upstream`** (`hornagency/logistics-tracker`) only if you want to pull occasional upstream fixes.
+
+1. On [GitHub](https://github.com/new): create a **new** repository (e.g. `vectora-logistics`). Do **not** initialize it with a README, `.gitignore`, or license (this folder already has those).
+2. In your local clone of this project:
+
+```bash
+git remote add origin https://github.com/YOUR_ORG_OR_USER/YOUR_REPO_NAME.git
+git push -u origin main
+```
+
+Use SSH instead of HTTPS if you prefer: `git@github.com:YOUR_ORG_OR_USER/YOUR_REPO_NAME.git`.
+
+### Create a new Vercel project
+
+1. Open the [Vercel dashboard](https://vercel.com/dashboard) → **Add New…** → **Project**.
+2. **Import** the **new** GitHub repository you created above (not the template repo).
+3. Framework preset **Next.js**; leave the default build command (`npm run build` runs `prisma generate` first per `package.json`).
+4. Under **Environment Variables**, add (at least for **Production**):
+
+| Variable | Notes |
+|----------|--------|
+| `DATABASE_URL` | PostgreSQL (e.g. Neon from [Vercel Marketplace](https://vercel.com/marketplace)) |
+| `ADMIN_USERNAME` | Admin login username |
+| `ADMIN_PASSWORD` | Strong password |
+| `ADMIN_SECRET` | Output of `openssl rand -hex 32` |
+| `NEXT_PUBLIC_SITE_URL` | `https://vectoralogistics.com` (or your live URL) |
+
+5. **Deploy**. Then run **`npx prisma db push`** (or your migration flow) against the production database and **`npm run db:seed`** if you want demo shipments (see [Deploying to Production](#deploying-to-production-vercel) below).
 
 ---
 
@@ -71,12 +104,12 @@ Open [http://localhost:3000/admin](http://localhost:3000/admin) for the admin pa
 
 | Code | Route | Status |
 |------|-------|--------|
-| `CSL-AF7X2K` | New York → London | Delivered |
-| `CSL-OC3B9M` | Shanghai → Rotterdam | In Transit |
-| `CSL-RD5H1P` | Manchester → Paris | Out for Delivery |
-| `CSL-WH8N4T` | Dubai → Lagos | Processing |
-| `CSL-EX2V6R` | Toronto → Tokyo | In Transit |
-| `CSL-SC4K7W` | Shenzhen → Amsterdam | Delivered |
+| `VLA-AF7X2K` | New York → London | Delivered |
+| `VLA-OC3B9M` | Shanghai → Rotterdam | In Transit |
+| `VLA-RD5H1P` | Manchester → Paris | Out for Delivery |
+| `VLA-WH8N4T` | Dubai → Lagos | Processing |
+| `VLA-EX2V6R` | Toronto → Tokyo | In Transit |
+| `VLA-SC4K7W` | Shenzhen → Amsterdam | Delivered |
 
 ---
 
@@ -101,6 +134,11 @@ openssl rand -hex 32
 ```
 
 ### 3. Deploy
+
+**Recommended:** connect the GitHub repo in the Vercel dashboard (see [Create a new Vercel project](#create-a-new-vercel-project) above) so every push deploys automatically.
+
+CLI alternative (links the current directory to a Vercel project):
+
 ```bash
 npx vercel
 ```
@@ -114,7 +152,7 @@ Go to **Project → Settings → Environment Variables** and add:
 | `ADMIN_USERNAME` | Your chosen admin username |
 | `ADMIN_PASSWORD` | A strong password |
 | `ADMIN_SECRET` | 64-char hex string from `openssl rand -hex 32` |
-| `NEXT_PUBLIC_SITE_URL` | Your production domain, e.g. `https://crystalskylogistics.com` |
+| `NEXT_PUBLIC_SITE_URL` | Your production domain, e.g. `https://vectoralogistics.com` |
 
 > The app will throw an error on login if `ADMIN_SECRET` is missing or uses the default dev value in production. This is intentional — it prevents deploying with insecure defaults.
 
