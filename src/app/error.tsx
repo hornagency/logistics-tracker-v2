@@ -25,8 +25,7 @@ export default function GlobalError({
         </div>
         <h1 className="mb-2 text-2xl font-bold text-slate-900">Something went wrong</h1>
         <p className="mb-6 text-slate-500">
-          An unexpected error occurred. Our team has been notified. You can try
-          again or return to the homepage.
+          Something went wrong on the Vectora Logistics site. You can try again or head back to the homepage. If this keeps happening, please contact us via the details in the footer.
         </p>
         {error.digest && (
           <p className="mb-6 rounded bg-slate-100 px-3 py-2 font-mono text-xs text-slate-500">
@@ -36,7 +35,7 @@ export default function GlobalError({
         <div className="flex flex-wrap justify-center gap-3">
           <button
             onClick={reset}
-            className="rounded-lg bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sky-700"
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-primary-dark"
           >
             Try again
           </button>

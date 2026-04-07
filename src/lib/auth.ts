@@ -1,6 +1,6 @@
 import { createHmac, timingSafeEqual } from "crypto";
 
-export const COOKIE_NAME = "csl_session";
+export const COOKIE_NAME = "vla_session";
 const SESSION_MS = 8 * 60 * 60 * 1000; // 8 hours
 
 function secret(): string {
@@ -39,7 +39,7 @@ export function verifySession(token: string): boolean {
 /** Constant-time credential comparison. */
 export function verifyCredentials(username: string, password: string): boolean {
   const adminUser = process.env.ADMIN_USERNAME ?? "admin";
-  const adminPass = process.env.ADMIN_PASSWORD ?? "CrystalSky2025!";
+  const adminPass = process.env.ADMIN_PASSWORD ?? "Vectora2025!";
   try {
     const uOk =
       username.length === adminUser.length &&
@@ -74,13 +74,13 @@ export function assertProductionSecrets(): void {
   const devSecret = "dev-secret-change-in-production";
   if (!process.env.ADMIN_SECRET || process.env.ADMIN_SECRET === devSecret) {
     throw new Error(
-      "[Crystal Sky] ADMIN_SECRET is not set or uses the default dev value. " +
+      "[Vectora] ADMIN_SECRET is not set or uses the default dev value. " +
         "Set a strong random secret before deploying: openssl rand -hex 32"
     );
   }
   if (!process.env.ADMIN_USERNAME || !process.env.ADMIN_PASSWORD) {
     throw new Error(
-      "[Crystal Sky] ADMIN_USERNAME and ADMIN_PASSWORD must be set in production."
+      "[Vectora] ADMIN_USERNAME and ADMIN_PASSWORD must be set in production."
     );
   }
 }

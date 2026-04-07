@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CslLogo } from "@/components/CslLogoMark";
+import { VectoraLogo } from "@/components/VectoraLogoMark";
 
 const nav = [
   { label: "Home", href: "/" },
@@ -15,8 +15,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
-        <Link href="/" aria-label="Crystal Sky Logistics — Home">
-          <CslLogo size="md" />
+        <Link href="/" aria-label="Vectora Logistics — Home">
+          <VectoraLogo size="md" />
         </Link>
         <nav className="hidden gap-8 md:flex">
           {nav.map((item) => (
@@ -29,11 +29,8 @@ export function Header() {
             </Link>
           ))}
         </nav>
-        <Link
-          href="/track"
-          className="btn-primary text-sm"
-        >
-          Track Shipment
+        <Link href="/track" className="btn-primary text-sm">
+          Vectora Track
         </Link>
       </div>
     </header>

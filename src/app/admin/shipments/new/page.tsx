@@ -11,7 +11,7 @@ function generateTrackingCode(): string {
   const suffix = Array.from(randomValues)
     .map((b) => chars[b % chars.length])
     .join("");
-  return `CSL-${suffix}`;
+  return `VLA-${suffix}`;
 }
 
 const INITIAL_FORM = {
@@ -84,7 +84,7 @@ export default function NewShipmentPage() {
     <div className="mx-auto max-w-3xl">
       <h1 className="text-2xl font-bold text-slate-900">New Shipment</h1>
       <p className="mt-1 text-sm text-slate-500">
-        Fill in the shipment details below. The tracking code is shared with the customer for self-service Track &amp; Trace.
+        Create a Vectora shipment record. The <span className="font-mono text-slate-700">VLA-</span> code is what the customer uses on the public Vectora Track &amp; Trace page.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-6">
@@ -104,7 +104,7 @@ export default function NewShipmentPage() {
                   value={form.trackingCode}
                   onChange={(e) => set("trackingCode", e.target.value.toUpperCase())}
                   className="input-field flex-1 font-mono"
-                  placeholder="CSL-XXXXXX"
+                  placeholder="VLA-XXXXXX"
                 />
                 <button type="button" onClick={handleGenerateCode} className="btn-secondary whitespace-nowrap">
                   Generate
@@ -155,7 +155,7 @@ export default function NewShipmentPage() {
                     checked={form.signatureRequired}
                     onChange={(e) => set("signatureRequired", e.target.checked)}
                   />
-                  <div className="h-5 w-9 rounded-full bg-slate-200 transition peer-checked:bg-sky-600" />
+                  <div className="h-5 w-9 rounded-full bg-slate-200 transition peer-checked:bg-primary" />
                   <div className="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition peer-checked:translate-x-4" />
                 </div>
                 <span className="text-sm font-medium text-slate-700">Signature Required on Delivery</span>

@@ -1,27 +1,22 @@
-# Vectora Logistics (`logistics-tracker-v2`)
+# Vectora Logistics (`vectora-logistics`)
 
 A full-stack logistics management and customer-facing tracking platform built with Next.js 16, Prisma, and Tailwind CSS. Branded for **Vectora Logistics** (teal theme, `VLA-` tracking codes).
 
-This project is meant to live in **its own GitHub repository** and **its own Vercel project** (separate from any template or parent repo).
+**Canonical repo:** [`hornagency/logistics-tracker-v2`](https://github.com/hornagency/logistics-tracker-v2) — Vectora Logistics product code (teal theme, `VLA-` codes, `vectoralogistics.com`). Deploy on **its own Vercel project** with a dedicated PostgreSQL database.
 
-### Connect your own GitHub repository
-
-The git remote `origin` is intentionally **not** set. The previous template remote is kept as **`upstream`** (`hornagency/logistics-tracker`) only if you want to pull occasional upstream fixes.
-
-1. On [GitHub](https://github.com/new): create a **new** repository (e.g. `vectora-logistics`). Do **not** initialize it with a README, `.gitignore`, or license (this folder already has those).
-2. In your local clone of this project:
+### Clone this repository
 
 ```bash
-git remote add origin https://github.com/YOUR_ORG_OR_USER/YOUR_REPO_NAME.git
-git push -u origin main
+git clone https://github.com/hornagency/logistics-tracker-v2.git
+cd logistics-tracker-v2
 ```
 
-Use SSH instead of HTTPS if you prefer: `git@github.com:YOUR_ORG_OR_USER/YOUR_REPO_NAME.git`.
+Optional: add **`upstream`** to `https://github.com/hornagency/logistics-tracker.git` only if you intend to cherry-pick upstream template fixes — do not merge wholesale; branding and product copy must stay Vectora-specific.
 
 ### Create a new Vercel project
 
 1. Open the [Vercel dashboard](https://vercel.com/dashboard) → **Add New…** → **Project**.
-2. **Import** the **new** GitHub repository you created above (not the template repo).
+2. **Import** [`hornagency/logistics-tracker-v2`](https://github.com/hornagency/logistics-tracker-v2) (or your fork).
 3. Framework preset **Next.js**; leave the default build command (`npm run build` runs `prisma generate` first per `package.json`).
 4. Under **Environment Variables**, add (at least for **Production**):
 

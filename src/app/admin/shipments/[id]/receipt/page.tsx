@@ -1,12 +1,12 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { prisma } from "@/lib/db";
-import { CslLetterhead } from "@/components/CslLetterhead";
+import { VectoraLetterhead } from "@/components/VectoraLetterhead";
 import { PrintButton } from "@/components/PrintButton";
 
 function receiptNumber(id: string, createdAt: Date) {
   const date = createdAt.toISOString().slice(0, 10).replace(/-/g, "");
-  return `CSL-RCP-${date}-${id.slice(-6).toUpperCase()}`;
+  return `VLA-RCP-${date}-${id.slice(-6).toUpperCase()}`;
 }
 
 function fmtDate(d: Date | null | undefined) {
@@ -46,7 +46,7 @@ export default async function ReceiptPage({ params }: { params: Promise<{ id: st
 
       {/* Document */}
       <div className="mx-auto max-w-4xl bg-white p-10 shadow-lg print:shadow-none print:p-0 print:max-w-none my-8 print:my-0">
-        <CslLetterhead />
+        <VectoraLetterhead />
 
         {/* Receipt header */}
         <div className="mt-8 flex items-start justify-between">
@@ -69,7 +69,7 @@ export default async function ReceiptPage({ params }: { params: Promise<{ id: st
             {shipment.estimatedDelivery && (
               <>
                 <p className="mt-2 text-xs font-medium uppercase tracking-wide text-slate-400">Est. Delivery</p>
-                <p className="mt-0.5 font-semibold text-sky-700">{fmtDate(shipment.estimatedDelivery)}</p>
+                <p className="mt-0.5 font-semibold text-primary-dark">{fmtDate(shipment.estimatedDelivery)}</p>
               </>
             )}
             <p className="mt-2 text-xs font-medium uppercase tracking-wide text-slate-400">Printed</p>
@@ -91,9 +91,9 @@ export default async function ReceiptPage({ params }: { params: Promise<{ id: st
                 </>
               ) : (
                 <>
-                  <p className="font-semibold text-slate-900">Crystal Sky Logistics Ltd.</p>
+                  <p className="font-semibold text-slate-900">Vectora Logistics Ltd.</p>
                   <p>Global Operations Center</p>
-                  <p>contact@crystalskylogistics.com</p>
+                  <p>contact@vectoralogistics.com</p>
                 </>
               )}
             </div>
@@ -139,7 +139,7 @@ export default async function ReceiptPage({ params }: { params: Promise<{ id: st
               ] as [string, string][]).map(([label, value]) => (
                 <tr key={label}>
                   <td className="w-2/5 bg-slate-50 px-5 py-3 font-medium text-slate-500 print:bg-gray-50">{label}</td>
-                  <td className={`px-5 py-3 font-medium ${label === "Declared Value" && value !== "—" ? "text-sky-700" : "text-slate-900"}`}>
+                  <td className={`px-5 py-3 font-medium ${label === "Declared Value" && value !== "—" ? "text-primary-dark" : "text-slate-900"}`}>
                     {value}
                   </td>
                 </tr>
@@ -189,7 +189,7 @@ export default async function ReceiptPage({ params }: { params: Promise<{ id: st
         <div className="mt-10 grid grid-cols-2 gap-8">
           <div className="rounded-xl border border-slate-200 p-5">
             <p className="text-xs font-semibold uppercase tracking-widest text-slate-400">Issued By</p>
-            <p className="mt-3 font-medium text-slate-900">Crystal Sky Logistics</p>
+            <p className="mt-3 font-medium text-slate-900">Vectora Logistics</p>
             <div className="mt-4 border-t border-dashed border-slate-200 pt-2">
               <p className="text-xs text-slate-400">Authorised Signature</p>
             </div>
@@ -209,9 +209,9 @@ export default async function ReceiptPage({ params }: { params: Promise<{ id: st
 
         {/* Footer */}
         <div className="mt-10 border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
-          <p className="font-medium text-slate-600">Crystal Sky Logistics Ltd.</p>
+          <p className="font-medium text-slate-600">Vectora Logistics Ltd.</p>
           <p className="mt-1">This receipt confirms shipment was processed. Keep for your records.</p>
-          <p className="mt-1">For queries: contact@crystalskylogistics.com</p>
+          <p className="mt-1">For queries: contact@vectoralogistics.com</p>
           <p className="mt-3 font-mono text-[10px] tracking-wide text-slate-300">
             {rcpNo} · Generated {today}
           </p>

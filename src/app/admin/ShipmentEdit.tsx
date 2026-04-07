@@ -233,7 +233,7 @@ export function ShipmentEdit({ shipment }: { shipment: Shipment }) {
                     checked={form.signatureRequired}
                     onChange={(e) => set("signatureRequired", e.target.checked)}
                   />
-                  <div className="h-5 w-9 rounded-full bg-slate-200 transition peer-checked:bg-sky-600" />
+                  <div className="h-5 w-9 rounded-full bg-slate-200 transition peer-checked:bg-primary" />
                   <div className="absolute left-0.5 top-0.5 h-4 w-4 rounded-full bg-white shadow transition peer-checked:translate-x-4" />
                 </div>
                 <span className="text-sm font-medium text-slate-700">Signature Required on Delivery</span>

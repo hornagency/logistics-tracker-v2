@@ -18,7 +18,7 @@ const prisma = new PrismaClient();
 async function main() {
   const shipments = [
     {
-      trackingCode:      "CSL-AF7X2K",
+      trackingCode:      "VLA-AF7X2K",
       origin:            "New York, USA",
       destination:       "London, UK",
       status:            "Delivered",
@@ -50,12 +50,12 @@ async function main() {
         { status: "Customs cleared",         location: "JFK Airport, New York",               description: "Export documentation approved" },
         { status: "In Transit",              location: "JFK — London Heathrow (AA107)",       description: "Departed on scheduled flight" },
         { status: "Arrived at destination",  location: "London Heathrow",                    description: "Cleared UK customs — no issues" },
-        { status: "Out for Delivery",        location: "Crystal Sky London Hub",              description: "Assigned to delivery driver" },
+        { status: "Out for Delivery",        location: "Vectora London Hub",              description: "Assigned to delivery driver" },
         { status: "Delivered",               location: "14 Canary Wharf, London",             description: "Signed for by reception. Delivered on time." },
       ],
     },
     {
-      trackingCode:      "CSL-OC3B9M",
+      trackingCode:      "VLA-OC3B9M",
       origin:            "Shanghai, China",
       destination:       "Rotterdam, Netherlands",
       status:            "In Transit",
@@ -90,7 +90,7 @@ async function main() {
       ],
     },
     {
-      trackingCode:      "CSL-RD5H1P",
+      trackingCode:      "VLA-RD5H1P",
       origin:            "Manchester, UK",
       destination:       "Paris, France",
       status:            "Out for Delivery",
@@ -125,7 +125,7 @@ async function main() {
       ],
     },
     {
-      trackingCode:      "CSL-WH8N4T",
+      trackingCode:      "VLA-WH8N4T",
       origin:            "Dubai, UAE",
       destination:       "Lagos, Nigeria",
       status:            "Processing",
@@ -158,7 +158,7 @@ async function main() {
       ],
     },
     {
-      trackingCode:      "CSL-EX2V6R",
+      trackingCode:      "VLA-EX2V6R",
       origin:            "Toronto, Canada",
       destination:       "Tokyo, Japan",
       status:            "In Transit",
@@ -193,7 +193,7 @@ async function main() {
       ],
     },
     {
-      trackingCode:      "CSL-SC4K7W",
+      trackingCode:      "VLA-SC4K7W",
       origin:            "Shenzhen, China",
       destination:       "Amsterdam, Netherlands",
       status:            "Delivered",
@@ -252,10 +252,10 @@ async function main() {
   if (!existingContact) {
     await prisma.contactSettings.create({
       data: {
-        email: "contact@crystalskylogistics.com",
-        phone: "+1 (555) 000-0000",
-        officeHoursLine1: "Mon – Fri, 8 am to 6 pm GMT",
-        officeHoursLine2: "Shipment tracking: 24/7",
+        email: "contact@vectoralogistics.com",
+        phone: "+44 20 7123 4567",
+        officeHoursLine1: "Mon – Fri, 8 am – 6 pm (GMT)",
+        officeHoursLine2: "Shipment tracking: 24/7 online",
       },
     });
     console.log("✓ Contact settings (default)");

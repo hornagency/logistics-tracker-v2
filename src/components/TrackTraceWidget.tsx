@@ -53,9 +53,9 @@ export function TrackTraceWidget({ variant = "strip", showResultsInline = true }
           : "rounded-xl border border-slate-200 bg-white p-6 shadow-sm"
       }
     >
-      <h2 className="text-xl font-bold text-slate-900">Track & Trace</h2>
+      <h2 className="text-xl font-bold text-slate-900">Vectora Track &amp; Trace</h2>
       <p className="mt-1 text-slate-600">
-        Real-time, detailed progress as your shipment speeds through the network. Enter up to 15 tracking characters.
+        Follow your shipment in real time with your Vectora code (format <span className="font-mono text-slate-800">VLA-XXXXXX</span>, up to 15 characters). Updates are posted from Vectora Admin — what you see here matches what our team logs for your cargo.
       </p>
       <form onSubmit={handleSubmit} className="mt-4 flex flex-wrap items-center gap-2">
         <input
@@ -63,7 +63,7 @@ export function TrackTraceWidget({ variant = "strip", showResultsInline = true }
           maxLength={15}
           value={code}
           onChange={(e) => setCode(e.target.value.toUpperCase())}
-          placeholder="e.g. CSL-A1B2C3"
+          placeholder="e.g. VLA-A1B2C3"
           className="input-field max-w-xs flex-1 font-mono"
         />
         <button type="submit" disabled={loading} className="btn-primary whitespace-nowrap">

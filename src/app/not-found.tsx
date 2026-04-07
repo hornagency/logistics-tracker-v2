@@ -4,15 +4,15 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-50 px-4 text-center">
       <div className="max-w-md">
-        <p className="mb-2 text-7xl font-extrabold text-sky-600">404</p>
+        <p className="mb-2 text-7xl font-extrabold text-primary">404</p>
         <h1 className="mb-3 text-2xl font-bold text-slate-900">Page not found</h1>
         <p className="mb-8 text-slate-500">
-          The page you are looking for does not exist or may have been moved.
+          This page isn&apos;t part of Vectora Logistics. It may have been moved or the link might be out of date.
         </p>
         <div className="flex flex-wrap justify-center gap-3">
           <Link
             href="/"
-            className="rounded-lg bg-sky-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-sky-700"
+            className="rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-primary-dark"
           >
             Back to homepage
           </Link>

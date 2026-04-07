@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CslLogo } from "@/components/CslLogoMark";
+import { VectoraLogo } from "@/components/VectoraLogoMark";
 
 const services = [
   { name: "Air Freight", href: "/#services" },
@@ -17,11 +17,11 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link href="/" aria-label="Crystal Sky Logistics">
-              <CslLogo size="md" light />
+            <Link href="/" aria-label="Vectora Logistics">
+              <VectoraLogo size="md" light />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Air, ocean, road, and warehousing for businesses of all sizes. We&apos;ve been doing this long enough to know how to get it right.
+              Vectora Logistics moves cargo by air, ocean, and road, with warehousing when you need it — for businesses of every size. Straight answers, clear tracking, and people who pick up the phone.
             </p>
           </div>
 
@@ -54,8 +54,8 @@ export function Footer() {
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/track" className="hover:text-white transition-colors">Track a Shipment</Link></li>
               <li>
-                <a href="mailto:contact@crystalskylogistics.com" className="hover:text-white transition-colors">
-                  contact@crystalskylogistics.com
+                <a href="mailto:contact@vectoralogistics.com" className="hover:text-white transition-colors">
+                  contact@vectoralogistics.com
                 </a>
               </li>
               <li>
@@ -72,7 +72,7 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-slate-700 pt-8 sm:flex-row">
           <p className="text-sm text-slate-500">
-            © {new Date().getFullYear()} Crystal Sky Logistics Ltd. All rights reserved.
+            © {new Date().getFullYear()} Vectora Logistics Ltd. All rights reserved.
           </p>
           <p className="text-xs text-slate-600">
             Freight you can actually track. People you can actually reach.

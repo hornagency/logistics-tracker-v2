@@ -1,12 +1,12 @@
 {
-  "name": "logistics-tracker",
+  "name": "vectora-logistics",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "db:push": "DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/.bin/prisma db push",
     "db:seed": "prisma generate && DOTENV_CONFIG_PATH=.env.local node -r dotenv/config ./node_modules/.bin/ts-node --compiler-options '{\"module\":\"CommonJS\",\"moduleResolution\":\"node\",\"types\":[\"node\"]}' prisma/seed.ts",
     "db:studio": "prisma studio"

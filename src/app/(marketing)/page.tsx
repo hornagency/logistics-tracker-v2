@@ -7,37 +7,37 @@ import { TrackTraceWidget } from "@/components/TrackTraceWidget";
 const SERVICES = [
   {
     title: "Air Freight",
-    desc: "Got something that needs to be somewhere fast? We move air cargo to 150+ airports, with same-day booking available and full customs handling at both ends. No hand-holding needed from your side.",
+    desc: "Got something that needs to be somewhere fast? Vectora moves air cargo to 150+ airports, with same-day booking available and full customs handling at both ends. No hand-holding needed from your side.",
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80",
     alt: "Cargo aircraft on airport tarmac at sunset",
   },
   {
     title: "Ocean Freight",
-    desc: "Whether you're filling a whole container or sharing one, we coordinate your sea shipment from first port to last. You'll get updates at each stage so you're not left guessing for days at a time.",
+    desc: "Whether you're filling a whole container or sharing one, Vectora coordinates your sea shipment from first port to last. You'll get updates at each stage so you're not left guessing for days at a time.",
     image: "https://images.unsplash.com/photo-1760165385839-a87ebb370ab5?w=600&q=80",
     alt: "Large container ship being loaded at a busy international port",
   },
   {
     title: "Road Freight",
-    desc: "We cover domestic and cross-border road freight for all sizes, from a single pallet to multi-truck loads. GPS-tracked vehicles, straightforward pricing, and delivery windows that are actually kept.",
+    desc: "Vectora covers domestic and cross-border road freight for all sizes, from a single pallet to multi-truck loads. GPS-tracked vehicles, straightforward pricing, and delivery windows that are actually kept.",
     image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80",
     alt: "Freight truck driving on an open highway at sunrise",
   },
   {
     title: "Warehousing",
-    desc: "If your goods need to sit somewhere before moving on, our warehouses are well-placed near the major transport hubs. Temperature-controlled, secure, and tied into the same tracking dashboard you already use.",
+    desc: "If your goods need to sit somewhere before moving on, Vectora's warehouse network sits near major hubs. Temperature-controlled, secure, and on the same Track & Trace system as every other leg of the journey.",
     image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80",
     alt: "Modern warehouse interior with organised shelving and forklifts",
   },
   {
     title: "Supply Chain",
-    desc: "Most logistics partners handle one piece. We can manage the whole chain, from picking up at source to delivering at destination, and we'll help identify where time and money are being lost along the way.",
+    desc: "Most logistics partners handle one piece. Vectora can manage the whole chain — from pickup at source to final delivery — and help you spot where time and money leak out along the way.",
     image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&q=80",
     alt: "Supply chain logistics and planning overview",
   },
   {
     title: "Packaging",
-    desc: "Breakage usually happens because things weren't packed right in the first place. Our team prepares cargo for the specific transport mode it's taking, with proper materials, not whatever happens to be around.",
+    desc: "Breakage usually happens because things weren't packed right in the first place. Vectora's packing team prepares cargo for the specific mode it's travelling on — proper materials and methods, not whatever happens to be lying around.",
     image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80",
     alt: "Professional packaging and crating for industrial cargo",
   },
@@ -69,7 +69,7 @@ const PROJECTS = [
 
 const TESTIMONIALS = [
   {
-    quote: "We tried three other freight companies before Crystal Sky. With every one of them, I'd find out about a problem because I went looking. Crystal Sky actually picks up the phone and tells me first. Sounds like a small thing, but it changes everything about how you plan your day.",
+    quote: "We tried three other freight companies before Vectora. With every one of them, I'd find out about a problem because I went looking. Vectora actually picks up the phone and tells me first. Sounds like a small thing, but it changes everything about how you plan your day.",
     name: "John Peter",
     role: "Logistics Director, Hallmark Retail Group",
     initials: "JP",
@@ -85,7 +85,7 @@ const TESTIMONIALS = [
     stars: 5,
   },
   {
-    quote: "A year ago I was spending part of every week responding to customers asking where their orders were. Since moving to Crystal Sky, those messages have almost completely stopped. Customers get a tracking link and check it themselves. That alone has freed up a lot of my time.",
+    quote: "A year ago I was spending part of every week responding to customers asking where their orders were. Since moving to Vectora, those messages have almost completely stopped. Customers get a tracking link and check it themselves. That alone has freed up a lot of my time.",
     name: "Sarah Owen",
     role: "Founder, Crestline E-Commerce",
     initials: "SO",
@@ -93,7 +93,7 @@ const TESTIMONIALS = [
     stars: 5,
   },
   {
-    quote: "Customs used to cost us two or three days every time, and nobody could ever explain why. Crystal Sky sorts the paperwork before the shipment arrives, so it clears straight through. We've been working with them for about 18 months now and haven't had a single hold-up at the port.",
+    quote: "Customs used to cost us two or three days every time, and nobody could ever explain why. Vectora sorts the paperwork before the shipment arrives, so it clears straight through. We've been working with them for about 18 months now and haven't had a single hold-up at the port.",
     name: "David Kwan",
     role: "Import Operations Manager, TechBridge Asia",
     initials: "DK",
@@ -127,9 +127,9 @@ export default async function HomePage() {
       <section id="services" className="bg-slate-50 py-20">
         <div className="mx-auto max-w-6xl px-4">
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-primary">What We Do</p>
-          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">What We Can Help You Move</h2>
+          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">What Vectora Can Move for You</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">
-            From a single parcel to a full supply chain operation, we handle freight by air, sea, and road. Pick what fits your shipment and we&apos;ll take it from there.
+            From a single parcel to a full supply chain, Vectora handles freight by air, sea, and road. Tell us what you&apos;re shipping and we&apos;ll match the right mode and keep you updated end to end.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => (
@@ -154,7 +154,7 @@ export default async function HomePage() {
             <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
               <Image
                 src="https://images.unsplash.com/photo-1570521462033-3015e76e7432?w=800&q=80"
-                alt="Crystal Sky Logistics team coordinating shipments at a logistics hub"
+                alt="Vectora Logistics team coordinating shipments at a logistics hub"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -165,7 +165,7 @@ export default async function HomePage() {
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">Who We Are</p>
               <h2 className="mt-2 text-3xl font-bold text-slate-900">A Logistics Company That Actually Picks Up the Phone</h2>
               <p className="mt-6 text-slate-600">
-                Crystal Sky was started because too many businesses were being let down by freight partners who went quiet the moment something went wrong. We wanted to build something different: a company where clients get honest updates, not excuses.
+                Vectora was started because too many businesses were being let down by freight partners who went quiet the moment something went wrong. We wanted to build something different: a company where clients get honest updates, not excuses.
               </p>
               <p className="mt-4 text-slate-600">
                 We use good tracking technology, yes. But we also have experienced people behind every shipment who know what to do when things don&apos;t go to plan. Because sometimes they don&apos;t, and that&apos;s when it matters who you&apos;re working with.
@@ -264,7 +264,7 @@ export default async function HomePage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">Get in Touch</p>
             <h2 className="mt-2 text-3xl font-bold">Have Something to Move?</h2>
             <p className="mx-auto mt-4 max-w-xl text-slate-300">
-              Send us an email or give us a call. Tell us what you need to ship and where it needs to go, and we&apos;ll come back with a clear quote.
+              Email or call Vectora Logistics. Share what you&apos;re shipping, origin, and destination — we&apos;ll reply with a clear quote and a realistic timeline.
             </p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-3">

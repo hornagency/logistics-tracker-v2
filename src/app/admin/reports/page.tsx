@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db";
-import { CslLetterhead } from "@/components/CslLetterhead";
+import { VectoraLetterhead } from "@/components/VectoraLetterhead";
 import { PrintButton } from "@/components/PrintButton";
 import Link from "next/link";
 
@@ -40,7 +40,7 @@ export default async function ReportsPage() {
 
       {/* Document */}
       <div className="mx-auto max-w-5xl bg-white p-10 shadow-lg print:shadow-none print:p-0 print:max-w-none my-8 print:my-0">
-        <CslLetterhead />
+        <VectoraLetterhead />
 
         {/* Report header */}
         <div className="mt-8 flex items-end justify-between border-b border-slate-200 pb-5">
@@ -143,10 +143,10 @@ export default async function ReportsPage() {
 
         {/* Footer */}
         <div className="mt-10 border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
-          <p className="font-medium text-slate-600">Crystal Sky Logistics Ltd. — Confidential Report</p>
+          <p className="font-medium text-slate-600">Vectora Logistics Ltd. — Confidential Report</p>
           <p className="mt-1">This document contains proprietary logistics data. Not for public distribution.</p>
           <p className="mt-3 font-mono text-[10px] tracking-wide text-slate-300">
-            Generated {today} · {total} shipment{total !== 1 ? "s" : ""} · Crystal Sky Logistics
+            Generated {today} · {total} shipment{total !== 1 ? "s" : ""} · Vectora Logistics
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { Suspense } from "react";
-import { CslLogo } from "@/components/CslLogoMark";
+import { VectoraLogo } from "@/components/VectoraLogoMark";
 
 /** Only allow same-origin relative paths to prevent open-redirect attacks. */
 function safRedirect(value: string | null): string {
@@ -54,7 +54,7 @@ function LoginForm() {
       <div className="relative hidden w-1/2 lg:block">
         <Image
           src="https://images.unsplash.com/photo-1759216373582-a24c4a65b031?w=1200&q=85"
-          alt="Container ship loading with cranes at port — Crystal Sky Logistics operations"
+          alt="Container ship loading with cranes at port — Vectora Logistics operations"
           fill
           className="object-cover"
           sizes="50vw"
@@ -63,12 +63,12 @@ function LoginForm() {
         />
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-primary/60 to-slate-900/80" />
         <div className="absolute inset-0 flex flex-col items-start justify-end p-12 text-white">
-          <CslLogo size="lg" light />
+          <VectoraLogo size="lg" light />
           <h1 className="mt-4 text-4xl font-bold leading-tight sr-only">
-            Crystal Sky Logistics
+            Vectora Logistics
           </h1>
           <p className="mt-4 max-w-sm text-slate-300">
-            Secure operations dashboard. Manage shipments, track deliveries, and generate tracking codes.
+            Vectora Admin — secure operations. Manage shipments, post milestones for customers, and issue <span className="font-mono text-slate-200">VLA-</span> tracking codes.
           </p>
           <div className="mt-10 flex gap-6 text-sm text-slate-400">
             <div>
@@ -94,9 +94,9 @@ function LoginForm() {
         <div className="mx-auto w-full max-w-sm">
           {/* Logo */}
           <div className="mb-10">
-            <CslLogo size="md" />
-            <h2 className="mt-6 text-2xl font-bold text-slate-900">Sign in to your account</h2>
-            <p className="mt-1 text-sm text-slate-500">Admin dashboard — authorised personnel only</p>
+            <VectoraLogo size="md" />
+            <h2 className="mt-6 text-2xl font-bold text-slate-900">Sign in to Vectora Admin</h2>
+            <p className="mt-1 text-sm text-slate-500">Authorised Vectora Logistics personnel only</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">

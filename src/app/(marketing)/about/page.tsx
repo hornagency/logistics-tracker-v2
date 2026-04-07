@@ -3,9 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About Us | Crystal Sky Logistics",
+  title: "About Us | Vectora Logistics",
   description:
-    "Learn how Crystal Sky Logistics connects businesses to global markets through reliable air freight, ocean shipping, and road cargo solutions.",
+    "Learn how Vectora Logistics connects businesses to global markets through reliable air freight, ocean shipping, and road cargo solutions.",
 };
 
 const VALUES = [
@@ -62,7 +62,7 @@ export default function AboutPage() {
       <section className="relative h-64 overflow-hidden bg-slate-800 md:h-80">
         <Image
           src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?w=1600&q=80"
-          alt="Crystal Sky Logistics team coordinating shipments at an operations centre"
+          alt="Vectora Logistics team coordinating shipments at an operations centre"
           fill
           className="object-cover object-center"
           sizes="100vw"
@@ -72,7 +72,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-slate-900/30" />
         <div className="relative flex h-full flex-col justify-center px-4 text-white">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="text-4xl font-bold md:text-5xl">About Crystal Sky Logistics</h1>
+            <h1 className="text-4xl font-bold md:text-5xl">About Vectora Logistics</h1>
             <p className="mt-3 text-lg text-slate-200">
               Freight handled properly, with people you can actually reach.
             </p>
@@ -84,15 +84,15 @@ export default function AboutPage() {
       <section className="bg-white py-16">
         <div className="mx-auto max-w-3xl px-4">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary">Our Story</p>
-          <h2 className="mt-2 text-2xl font-bold text-slate-900">Why We Started Crystal Sky</h2>
+          <h2 className="mt-2 text-2xl font-bold text-slate-900">Why We Started Vectora</h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-600">
-            Crystal Sky came out of a frustration most businesses know well. You book a freight company, something goes sideways, and suddenly nobody&apos;s available to explain what happened or when it&apos;ll be sorted. We saw it happen too many times, to too many businesses that didn&apos;t deserve it.
+            Vectora came out of a frustration most businesses know well. You book a freight company, something goes sideways, and suddenly nobody&apos;s available to explain what happened or when it&apos;ll be sorted. We saw it happen too many times, to too many businesses that didn&apos;t deserve it.
           </p>
           <p className="mt-4 text-slate-600 leading-relaxed">
             So we built something different. The team we put together has experience across air freight, sea shipping, road haulage, customs brokerage, and warehousing. Not because we wanted to offer everything under the sun, but because these problems are connected and solving them properly means understanding all of them.
           </p>
           <p className="mt-4 text-slate-600 leading-relaxed">
-            We now move thousands of shipments each month to more than 150 destinations. Every single one gets a tracking code, a dedicated contact, and the same level of attention regardless of how big or small the client is.
+            Vectora now moves thousands of shipments each month to more than 150 destinations. Every one gets a unique <span className="font-mono text-slate-800">VLA-</span> tracking code, a dedicated contact, and the same attention whether you&apos;re a startup or a multinational.
           </p>
         </div>
       </section>
@@ -166,16 +166,16 @@ export default function AboutPage() {
       <section className="relative overflow-hidden bg-slate-900 py-20">
         <Image
           src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=1600&q=70"
-          alt="Crystal Sky Logistics warehouse operations"
+          alt="Vectora Logistics warehouse operations"
           fill
           className="object-cover opacity-25"
           sizes="100vw"
           unoptimized
         />
         <div className="relative z-10 mx-auto max-w-3xl px-4 text-center text-white">
-          <h2 className="text-3xl font-bold">Want to Give Us a Try?</h2>
+          <h2 className="text-3xl font-bold">Ready to Work with Vectora?</h2>
           <p className="mt-4 text-lg text-slate-300">
-            Send us your shipment details and we&apos;ll put together a quote. No commitment, no sales call, just a clear price and a plan.
+            Share your shipment details with Vectora Logistics and we&apos;ll return a clear quote and plan — no hard sell, just freight handled properly.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link href="/track" className="btn-primary">Track a Shipment</Link>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AdminNav } from "./AdminNav";
 
 export const metadata: Metadata = {
-  title: "Admin | Crystal Sky Logistics",
+  title: "Admin | Vectora Logistics",
   robots: { index: false, follow: false },
 };
 

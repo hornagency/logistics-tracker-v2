@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { checkRateLimit } from "@/lib/rateLimit";
 
-const COOKIE_NAME = "csl_session";
+const COOKIE_NAME = "vla_session";
 
 function hexToBytes(hex: string): ArrayBuffer {
   const bytes = new Uint8Array(hex.length / 2);

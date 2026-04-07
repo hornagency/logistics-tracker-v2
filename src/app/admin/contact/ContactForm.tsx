@@ -49,7 +49,7 @@ export function ContactForm({ initial }: { initial: ContactSettings }) {
           value={form.email}
           onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
           className="input-field mt-3"
-          placeholder="contact@crystalskylogistics.com"
+          placeholder="contact@vectoralogistics.com"
           required
         />
       </div>

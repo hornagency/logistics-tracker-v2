@@ -64,9 +64,9 @@ export default function TrackPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/60 to-transparent" />
         <div className="relative flex h-full flex-col justify-center px-4 text-white">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-3xl font-bold md:text-4xl">Where Is Your Shipment?</h1>
+            <h1 className="text-3xl font-bold md:text-4xl">Vectora Track &amp; Trace</h1>
             <p className="mt-3 text-slate-200">
-              Type in your Crystal Sky tracking code and we&apos;ll show you exactly where your parcel is and every stop it has made along the way.
+              Enter your Vectora <span className="font-mono font-medium">VLA-</span> tracking code below. We&apos;ll show current status, route, and every milestone we&apos;ve logged for your shipment.
             </p>
           </div>
         </div>
@@ -75,15 +75,17 @@ export default function TrackPage() {
       {/* Widget-style form + full result */}
       <div className="mx-auto max-w-2xl px-4 py-12">
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 className="text-xl font-bold text-slate-900">Track Your Shipment</h2>
-          <p className="mt-1 text-slate-600">Your tracking code was sent with your shipment confirmation. Paste it in below and hit the button.</p>
+          <h2 className="text-xl font-bold text-slate-900">Look Up a Shipment</h2>
+          <p className="mt-1 text-slate-600">
+            Your Vectora confirmation includes a <span className="font-mono text-slate-800">VLA-</span> code. Paste it here to see live status and history — no login required.
+          </p>
           <form onSubmit={handleSubmit} className="mt-4 flex flex-wrap items-center gap-2">
             <input
               type="text"
               maxLength={15}
               value={code}
               onChange={(e) => setCode(e.target.value.toUpperCase())}
-              placeholder="e.g. CSL-A1B2C3"
+              placeholder="e.g. VLA-A1B2C3"
               className="input-field max-w-xs flex-1 font-mono"
             />
             <button type="submit" disabled={loading} className="btn-primary whitespace-nowrap">
@@ -153,7 +155,7 @@ export default function TrackPage() {
               <div className="rounded-lg bg-slate-50 p-4">
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Declared value</p>
                 {result.declaredValue ? (
-                  <p className="mt-2 font-medium text-sky-700">{result.declaredValue}</p>
+                  <p className="mt-2 font-medium text-primary-dark">{result.declaredValue}</p>
                 ) : (
                   <p className="mt-2 text-sm italic text-slate-400">Not provided</p>
                 )}
@@ -195,8 +197,8 @@ export default function TrackPage() {
         )}
 
         <p className="mt-8 text-center text-sm text-slate-500">
-          Can&apos;t find your tracking code?{" "}
-          <Link href="/#contact" className="text-primary hover:underline">Get in touch</Link> and we&apos;ll look it up for you.
+          Can&apos;t find your Vectora code?{" "}
+          <Link href="/#contact" className="text-primary hover:underline">Contact Vectora</Link> and we&apos;ll look it up for you.
         </p>
         <p className="mt-2 text-center text-sm">
           <Link href="/" className="text-slate-400 hover:text-primary">← Back to home</Link>

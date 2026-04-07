@@ -2,10 +2,11 @@ import { cache } from "react";
 import { prisma } from "@/lib/db";
 
 const DEFAULTS = {
-  email: "contact@crystalskylogistics.com",
-  phone: "+1 (555) 000-0000",
-  officeHoursLine1: "Mon – Fri, 8 am to 6 pm GMT",
-  officeHoursLine2: "Shipment tracking: 24/7",
+  email: "contact@vectoralogistics.com",
+  // Placeholder; override in Admin ▸ Contact or DB.
+  phone: "+44 20 7123 4567",
+  officeHoursLine1: "Mon – Fri, 8 am – 6 pm (GMT)",
+  officeHoursLine2: "Shipment tracking: 24/7 online",
 } as const;
 
 export type ContactSettings = {

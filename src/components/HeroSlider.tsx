@@ -7,7 +7,7 @@ import Link from "next/link";
 const SLIDES = [
   {
     title: "Need It There Tomorrow? We Can Make That Happen.",
-    subtitle: "Crystal Sky runs air freight to over 150 airports worldwide. Same-day bookings, next available flight, customs handled on both ends. No chasing required.",
+    subtitle: "Vectora runs air freight to over 150 airports worldwide. Same-day bookings, next available flight, customs handled on both ends. No chasing required.",
     ctaPrimary: "Track a Shipment",
     ctaPrimaryHref: "/track",
     ctaSecondary: "Our Services",
@@ -17,7 +17,7 @@ const SLIDES = [
   },
   {
     title: "Bulk Cargo by Sea, Without the Usual Headaches",
-    subtitle: "Full containers or shared loads, we coordinate your sea shipments from first port to last. Documentation, customs clearance, and regular updates while your cargo is at sea.",
+    subtitle: "Full containers or shared loads — Vectora coordinates your sea shipments from first port to last. Documentation, customs clearance, and regular updates while your cargo is at sea.",
     ctaPrimary: "Get a Quote",
     ctaPrimaryHref: "/#contact",
     ctaSecondary: "Our Services",
@@ -26,8 +26,8 @@ const SLIDES = [
     alt: "Large container ship being loaded at a busy port",
   },
   {
-    title: "Log In and See Exactly Where Your Shipment Is",
-    subtitle: "Every shipment we handle comes with a tracking code. Use it anytime, from any device, to see where your goods are and what happens next in the journey.",
+    title: "See Exactly Where Your Vectora Shipment Is",
+    subtitle: "Every Vectora shipment gets a unique VLA- tracking code. Enter it anytime on our Track & Trace page — no account needed — to follow your cargo in real time.",
     ctaPrimary: "Track Your Shipment",
     ctaPrimaryHref: "/track",
     ctaSecondary: "About Us",

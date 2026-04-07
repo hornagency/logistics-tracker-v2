@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useEffect } from "react";
-import { CslLogoMark } from "@/components/CslLogoMark";
+import { useState } from "react";
+import { VectoraLogoMark } from "@/components/VectoraLogoMark";
 
 const NAV_ITEMS = [
   {
@@ -57,11 +57,6 @@ export function AdminNav() {
   const pathname = usePathname();
   const [loggingOut, setLoggingOut] = useState(false);
 
-  // Reset "Signing out" when route changes (e.g. landed on login, or came back after login)
-  useEffect(() => {
-    setLoggingOut(false);
-  }, [pathname]);
-
   async function handleLogout() {
     setLoggingOut(true);
     try {
@@ -78,8 +73,8 @@ export function AdminNav() {
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-8 px-4 sm:px-6">
         {/* Logo */}
         <Link href="/admin" className="flex shrink-0 items-center gap-2.5">
-          <CslLogoMark className="h-8 w-8" />
-          <span className="hidden text-sm font-bold text-slate-900 sm:block">Crystal Sky <span className="font-normal text-slate-400">Admin</span></span>
+          <VectoraLogoMark className="h-8 w-8" />
+          <span className="hidden text-sm font-bold text-slate-900 sm:block">Vectora <span className="font-normal text-slate-400">Admin</span></span>
         </Link>
 
         {/* Nav items */}
