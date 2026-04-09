@@ -50,11 +50,11 @@ function LoginForm() {
 
   return (
     <div className="flex min-h-screen">
-      {/* Left panel — hero image */}
+      {/* Left panel: hero image */}
       <div className="relative hidden w-1/2 lg:block">
         <Image
           src="https://images.unsplash.com/photo-1759216373582-a24c4a65b031?w=1200&q=85"
-          alt="Container ship loading with cranes at port — Vectora Logistics operations"
+          alt="Container ship loading at port"
           fill
           className="object-cover"
           sizes="50vw"
@@ -68,7 +68,7 @@ function LoginForm() {
             Vectora Logistics
           </h1>
           <p className="mt-4 max-w-sm text-slate-300">
-            Vectora Admin — secure operations. Manage shipments, post milestones for customers, and issue <span className="font-mono text-slate-200">VLA-</span> tracking codes.
+            Internal admin: shipments, status lines for customers, and <span className="font-mono text-slate-200">VLA-</span> codes.
           </p>
           <div className="mt-10 flex gap-6 text-sm text-slate-400">
             <div>
@@ -89,14 +89,14 @@ function LoginForm() {
         </div>
       </div>
 
-      {/* Right panel — login form */}
+      {/* Right panel: login form */}
       <div className="flex w-full flex-col justify-center px-6 py-12 lg:w-1/2 lg:px-16 xl:px-24">
         <div className="mx-auto w-full max-w-sm">
           {/* Logo */}
           <div className="mb-10">
             <VectoraLogo size="md" />
             <h2 className="mt-6 text-2xl font-bold text-slate-900">Sign in to Vectora Admin</h2>
-            <p className="mt-1 text-sm text-slate-500">Authorised Vectora Logistics personnel only</p>
+            <p className="mt-1 text-sm text-slate-500">Staff access only</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-5">

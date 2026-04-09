@@ -67,13 +67,13 @@ export function ContactForm({ initial }: { initial: ContactSettings }) {
       </div>
       <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
         <h2 className="font-semibold text-slate-900">Office Hours</h2>
-        <p className="mt-1 text-sm text-slate-500">First line (e.g. Mon – Fri, 8 am to 6 pm GMT).</p>
+        <p className="mt-1 text-sm text-slate-500">First line (e.g. Mon to Fri, 8 am to 6 pm GMT).</p>
         <input
           type="text"
           value={form.officeHoursLine1}
           onChange={(e) => setForm((f) => ({ ...f, officeHoursLine1: e.target.value }))}
           className="input-field mt-3"
-          placeholder="Mon – Fri, 8 am to 6 pm GMT"
+          placeholder="Mon to Fri, 8 am to 6 pm GMT"
           required
         />
         <p className="mt-3 text-sm text-slate-500">Second line (e.g. Shipment tracking: 24/7). Optional.</p>

@@ -6,31 +6,34 @@ import Link from "next/link";
 
 const SLIDES = [
   {
-    title: "Need It There Tomorrow? We Can Make That Happen.",
-    subtitle: "Vectora runs air freight to over 150 airports worldwide. Same-day bookings, next available flight, customs handled on both ends. No chasing required.",
-    ctaPrimary: "Track a Shipment",
+    title: "Air freight",
+    subtitle:
+      "Export and import air cargo with booking, documentation, and handovers coordinated for each leg. Status updates appear on your shipment as we log them.",
+    ctaPrimary: "Track a shipment",
     ctaPrimaryHref: "/track",
-    ctaSecondary: "Our Services",
+    ctaSecondary: "Services",
     ctaSecondaryHref: "/#services",
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1600&q=80",
     alt: "Cargo plane on airport tarmac at dusk",
   },
   {
-    title: "Bulk Cargo by Sea, Without the Usual Headaches",
-    subtitle: "Full containers or shared loads — Vectora coordinates your sea shipments from first port to last. Documentation, customs clearance, and regular updates while your cargo is at sea.",
-    ctaPrimary: "Get a Quote",
+    title: "Ocean freight",
+    subtitle:
+      "Full containers or shared space, port to port, with customs paperwork and milestones tracked through the voyage.",
+    ctaPrimary: "Get a quote",
     ctaPrimaryHref: "/#contact",
-    ctaSecondary: "Our Services",
+    ctaSecondary: "Services",
     ctaSecondaryHref: "/#services",
     image: "https://images.unsplash.com/photo-1760165385839-a87ebb370ab5?w=1600&q=80",
     alt: "Large container ship being loaded at a busy port",
   },
   {
-    title: "See Exactly Where Your Vectora Shipment Is",
-    subtitle: "Every Vectora shipment gets a unique VLA- tracking code. Enter it anytime on our Track & Trace page — no account needed — to follow your cargo in real time.",
-    ctaPrimary: "Track Your Shipment",
+    title: "Track your shipment",
+    subtitle:
+      "Each booking gets a VLA code. Enter it on Track and Trace to see current status without signing in.",
+    ctaPrimary: "Track your shipment",
     ctaPrimaryHref: "/track",
-    ctaSecondary: "About Us",
+    ctaSecondary: "About us",
     ctaSecondaryHref: "/about",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80",
     alt: "Busy logistics warehouse with forklifts and shelving",

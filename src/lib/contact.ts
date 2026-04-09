@@ -1,11 +1,11 @@
-import { cache } from "react";
+import { unstable_noStore as noStore } from "next/cache";
 import { prisma } from "@/lib/db";
 
 const DEFAULTS = {
   email: "contact@vectoralogistics.com",
   // Placeholder; override in Admin ▸ Contact or DB.
   phone: "+44 20 7123 4567",
-  officeHoursLine1: "Mon – Fri, 8 am – 6 pm (GMT)",
+  officeHoursLine1: "Mon to Fri, 8 am to 6 pm (GMT)",
   officeHoursLine2: "Shipment tracking: 24/7 online",
 } as const;
 
@@ -24,9 +24,9 @@ export function getContactDefaults(): ContactSettings {
 /**
  * Returns contact settings for the public site. Never throws: falls back to defaults
  * if the table is missing, empty, or the query fails (keeps the site stable).
- * Cached per request so layout + page share one query.
  */
-export const getContactSettings = cache(async (): Promise<ContactSettings> => {
+export async function getContactSettings(): Promise<ContactSettings> {
+  noStore();
   try {
     const row = await prisma.contactSettings.findFirst({ orderBy: { updatedAt: "desc" } });
     if (!row) return { ...DEFAULTS, officeHoursLine2: DEFAULTS.officeHoursLine2 };
@@ -39,4 +39,4 @@ export const getContactSettings = cache(async (): Promise<ContactSettings> => {
   } catch {
     return { ...DEFAULTS, officeHoursLine2: DEFAULTS.officeHoursLine2 };
   }
-});
+}

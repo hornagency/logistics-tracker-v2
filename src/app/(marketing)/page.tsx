@@ -7,37 +7,37 @@ import { TrackTraceWidget } from "@/components/TrackTraceWidget";
 const SERVICES = [
   {
     title: "Air Freight",
-    desc: "Got something that needs to be somewhere fast? Vectora moves air cargo to 150+ airports, with same-day booking available and full customs handling at both ends. No hand-holding needed from your side.",
+    desc: "Air export and import: bookings, documentation, and milestones updated on your shipment record as they happen.",
     image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=600&q=80",
     alt: "Cargo aircraft on airport tarmac at sunset",
   },
   {
     title: "Ocean Freight",
-    desc: "Whether you're filling a whole container or sharing one, Vectora coordinates your sea shipment from first port to last. You'll get updates at each stage so you're not left guessing for days at a time.",
+    desc: "Container and consolidated sea freight with updates at the main steps so you are not left without status for long stretches.",
     image: "https://images.unsplash.com/photo-1760165385839-a87ebb370ab5?w=600&q=80",
     alt: "Large container ship being loaded at a busy international port",
   },
   {
     title: "Road Freight",
-    desc: "Vectora covers domestic and cross-border road freight for all sizes, from a single pallet to multi-truck loads. GPS-tracked vehicles, straightforward pricing, and delivery windows that are actually kept.",
+    desc: "Domestic and cross-border road moves from part loads to full trucks, with agreed collection and delivery windows.",
     image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&q=80",
     alt: "Freight truck driving on an open highway at sunrise",
   },
   {
     title: "Warehousing",
-    desc: "If your goods need to sit somewhere before moving on, Vectora's warehouse network sits near major hubs. Temperature-controlled, secure, and on the same Track & Trace system as every other leg of the journey.",
+    desc: "Storage before or after main carriage, including controlled environments where needed, on the same tracking flow as the rest of the move.",
     image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&q=80",
     alt: "Modern warehouse interior with organised shelving and forklifts",
   },
   {
     title: "Supply Chain",
-    desc: "Most logistics partners handle one piece. Vectora can manage the whole chain — from pickup at source to final delivery — and help you spot where time and money leak out along the way.",
+    desc: "End to end coordination from collection to delivery when you want one party arranging the chain instead of several handoffs.",
     image: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&q=80",
     alt: "Supply chain logistics and planning overview",
   },
   {
     title: "Packaging",
-    desc: "Breakage usually happens because things weren't packed right in the first place. Vectora's packing team prepares cargo for the specific mode it's travelling on — proper materials and methods, not whatever happens to be lying around.",
+    desc: "Crating and packing suited to the mode you are using so goods are less likely to arrive damaged.",
     image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80",
     alt: "Professional packaging and crating for industrial cargo",
   },
@@ -45,60 +45,38 @@ const SERVICES = [
 
 const PROJECTS = [
   {
-    title: "Freight Lane Consolidation",
-    tag: "Cost Reduction",
+    title: "Route consolidation",
+    tag: "Road",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80",
     alt: "Logistics analytics dashboard with route maps",
-    desc: "A retailer we work with was running a lot of near-empty trucks on overlapping routes. We consolidated the lanes, cut their freight mileage by 34%, and saved them over $200,000 in the first year.",
+    desc: "A retail client had several light loads on similar corridors. We merged where it made sense and cut empty running without changing their cut-off times.",
   },
   {
-    title: "Live Inventory Dashboard",
-    tag: "Warehouse Tech",
+    title: "Warehouse records",
+    tag: "Warehouse",
     image: "https://images.unsplash.com/photo-1595079676339-1534801ad6cf?w=600&q=80",
     alt: "Warehouse worker scanning barcode on inventory shelf",
-    desc: "A client's warehouse was running entirely on paper records. After setting them up with barcode scanning and a live dashboard, their stockout incidents dropped by 67% in the first three months.",
+    desc: "Moved a small warehouse from paper lists to barcode checks and a simple stock view so dispatch could see what was on hand the same day.",
   },
   {
-    title: "Last-Mile Route Cleanup",
-    tag: "Delivery Efficiency",
+    title: "Delivery rounds",
+    tag: "Last mile",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80",
     alt: "Route planning map on a laptop screen",
-    desc: "One client was sending different vehicles to the same postcodes on different days. We cleaned up the route plan, removed 12 overlapping delivery legs, and brought the average delivery time down by two full days.",
+    desc: "Adjusted a local delivery plan so the same areas were not visited twice in one week unless volume required it.",
   },
 ];
 
 const TESTIMONIALS = [
   {
-    quote: "We tried three other freight companies before Vectora. With every one of them, I'd find out about a problem because I went looking. Vectora actually picks up the phone and tells me first. Sounds like a small thing, but it changes everything about how you plan your day.",
-    name: "John Peter",
-    role: "Logistics Director, Hallmark Retail Group",
-    initials: "JP",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&w=150&q=80",
-    stars: 5,
+    quote:
+      "We get a straight answer when we call. Delays still happen in freight, but we are not left guessing.",
+    attribution: "Operations lead, UK retail",
   },
   {
-    quote: "Wasn't sure about giving them our Frankfurt deliveries. Tight windows, a client who notices every slip. But every single shipment arrived on time, and they had status updates ready before I thought to check. Passed their number on to a few contacts since and they've all come back happy.",
-    name: "Martin Hope",
-    role: "Managing Director, ProMov Freight",
-    initials: "MH",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80",
-    stars: 5,
-  },
-  {
-    quote: "A year ago I was spending part of every week responding to customers asking where their orders were. Since moving to Vectora, those messages have almost completely stopped. Customers get a tracking link and check it themselves. That alone has freed up a lot of my time.",
-    name: "Sarah Owen",
-    role: "Founder, Crestline E-Commerce",
-    initials: "SO",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&q=80",
-    stars: 5,
-  },
-  {
-    quote: "Customs used to cost us two or three days every time, and nobody could ever explain why. Vectora sorts the paperwork before the shipment arrives, so it clears straight through. We've been working with them for about 18 months now and haven't had a single hold-up at the port.",
-    name: "David Kwan",
-    role: "Import Operations Manager, TechBridge Asia",
-    initials: "DK",
-    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&q=80",
-    stars: 5,
+    quote:
+      "Customers use the tracking link instead of emailing us for every update. That was the main win for our team.",
+    attribution: "Owner, online goods seller",
   },
 ];
 
@@ -127,9 +105,9 @@ export default async function HomePage() {
       <section id="services" className="bg-slate-50 py-20">
         <div className="mx-auto max-w-6xl px-4">
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-primary">What We Do</p>
-          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">What Vectora Can Move for You</h2>
+          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">Services</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">
-            From a single parcel to a full supply chain, Vectora handles freight by air, sea, and road. Tell us what you&apos;re shipping and we&apos;ll match the right mode and keep you updated end to end.
+            Air, sea, road, storage, and related work. Tell us origin, destination, and goods, and we will propose a mode and keep status on your file.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {SERVICES.map((s) => (
@@ -163,21 +141,25 @@ export default async function HomePage() {
             </div>
             <div>
               <p className="text-sm font-semibold uppercase tracking-widest text-primary">Who We Are</p>
-              <h2 className="mt-2 text-3xl font-bold text-slate-900">A Logistics Company That Actually Picks Up the Phone</h2>
+              <h2 className="mt-2 text-3xl font-bold text-slate-900">Who we are</h2>
               <p className="mt-6 text-slate-600">
-                Vectora was started because too many businesses were being let down by freight partners who went quiet the moment something went wrong. We wanted to build something different: a company where clients get honest updates, not excuses.
+                Vectora is a freight forwarder with air, ocean, road, and warehouse coverage. We started from seeing too many silent partners when schedules slipped.
               </p>
               <p className="mt-4 text-slate-600">
-                We use good tracking technology, yes. But we also have experienced people behind every shipment who know what to do when things don&apos;t go to plan. Because sometimes they don&apos;t, and that&apos;s when it matters who you&apos;re working with.
+                Tracking is online for every active file, and there is a human contact when something needs a decision or a call to a carrier.
               </p>
               <div className="mt-8 grid gap-6 sm:grid-cols-2">
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
                   <h3 className="text-lg font-semibold text-primary">Our Mission</h3>
-                  <p className="mt-2 text-slate-600">Give businesses of every size access to reliable, transparent freight handling. You shouldn&apos;t need to be a large corporation to get a logistics partner that actually communicates.</p>
+                  <p className="mt-2 text-slate-600">
+                    Clear pricing where we can give it, status you can see, and someone who answers when the lane is stuck.
+                  </p>
                 </div>
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-6">
                   <h3 className="text-lg font-semibold text-primary">Our Vision</h3>
-                  <p className="mt-2 text-slate-600">Shipping internationally should be straightforward. We&apos;re working toward a point where any business can move goods across borders without it being a full-time job to manage.</p>
+                  <p className="mt-2 text-slate-600">
+                    International shipping with less admin on your side: paperwork and handoffs handled as part of the job.
+                  </p>
                 </div>
               </div>
               <p className="mt-8">
@@ -192,9 +174,9 @@ export default async function HomePage() {
       <section className="bg-slate-50 py-20">
         <div className="mx-auto max-w-6xl px-4">
           <p className="text-center text-sm font-semibold uppercase tracking-widest text-primary">Client Work</p>
-          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">A Few Problems We&apos;ve Solved</h2>
+          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">Recent work</h2>
           <p className="mx-auto mt-4 max-w-2xl text-center text-slate-600">
-            Numbers don&apos;t tell the whole story, but they help. Here are three real situations where we came in and fixed something that was costing a client time or money.
+            Examples of the sort of changes we make for clients. Details vary by lane and contract.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {PROJECTS.map((p) => (
@@ -206,7 +188,9 @@ export default async function HomePage() {
                   <span className="inline-block rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">{p.tag}</span>
                   <h3 className="mt-3 text-lg font-semibold text-slate-900">{p.title}</h3>
                   <p className="mt-2 text-slate-600">{p.desc}</p>
-                  <Link href="/#contact" className="mt-4 inline-block text-sm font-medium text-primary hover:underline">Talk to us about this →</Link>
+                  <Link href="/#contact" className="mt-4 inline-block text-sm font-medium text-primary hover:underline">
+                    Contact
+                  </Link>
                 </div>
               </div>
             ))}
@@ -217,31 +201,20 @@ export default async function HomePage() {
       {/* Testimonials */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <p className="text-center text-sm font-semibold uppercase tracking-widest text-primary">Client Stories</p>
-          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">What Our Clients Actually Say</h2>
+          <p className="text-center text-sm font-semibold uppercase tracking-widest text-primary">Feedback</p>
+          <h2 className="mt-2 text-center text-3xl font-bold text-slate-900">What clients said</h2>
           <p className="mx-auto mt-4 max-w-xl text-center text-slate-600">
-            We asked a few of the businesses we work with to share their experience. Here&apos;s what they told us.
+            Short notes from people we already move freight for. Roles are general on purpose.
           </p>
           <div className="mt-12 grid gap-8 md:grid-cols-2">
             {TESTIMONIALS.map((t) => (
-              <blockquote key={t.name} className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                {/* Stars */}
-                <div className="flex gap-1">
-                  {Array.from({ length: t.stars }).map((_, i) => (
-                    <svg key={i} className="h-4 w-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
+              <blockquote
+                key={t.attribution}
+                className="flex flex-col gap-4 rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
+              >
                 <p className="flex-1 text-slate-700 leading-relaxed">&ldquo;{t.quote}&rdquo;</p>
-                <footer className="flex items-center gap-3 border-t border-slate-200 pt-4">
-                  <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-full">
-                    <Image src={t.image} alt={t.name} fill className="object-cover" sizes="44px" unoptimized />
-                  </div>
-                  <div>
-                    <cite className="block font-semibold text-slate-900 not-italic">{t.name}</cite>
-                    <p className="text-sm text-slate-500">{t.role}</p>
-                  </div>
+                <footer className="border-t border-slate-200 pt-4">
+                  <p className="text-sm text-slate-500">{t.attribution}</p>
                 </footer>
               </blockquote>
             ))}
@@ -262,9 +235,9 @@ export default async function HomePage() {
         <div className="relative z-10 mx-auto max-w-5xl px-4">
           <div className="text-center">
             <p className="text-sm font-semibold uppercase tracking-widest text-primary/80">Get in Touch</p>
-            <h2 className="mt-2 text-3xl font-bold">Have Something to Move?</h2>
+            <h2 className="mt-2 text-3xl font-bold">Contact</h2>
             <p className="mx-auto mt-4 max-w-xl text-slate-300">
-              Email or call Vectora Logistics. Share what you&apos;re shipping, origin, and destination — we&apos;ll reply with a clear quote and a realistic timeline.
+              Email or call with origin, destination, and what you are shipping. We reply with rates or questions, usually within one business day.
             </p>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-3">

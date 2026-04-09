@@ -55,7 +55,7 @@ export function TrackTraceWidget({ variant = "strip", showResultsInline = true }
     >
       <h2 className="text-xl font-bold text-slate-900">Vectora Track &amp; Trace</h2>
       <p className="mt-1 text-slate-600">
-        Follow your shipment in real time with your Vectora code (format <span className="font-mono text-slate-800">VLA-XXXXXX</span>, up to 15 characters). Updates are posted from Vectora Admin — what you see here matches what our team logs for your cargo.
+        Enter your Vectora code (e.g. <span className="font-mono text-slate-800">VLA-XXXXXX</span>, up to 15 characters). Status lines are what we last saved on the shipment file.
       </p>
       <form onSubmit={handleSubmit} className="mt-4 flex flex-wrap items-center gap-2">
         <input
@@ -67,7 +67,7 @@ export function TrackTraceWidget({ variant = "strip", showResultsInline = true }
           className="input-field max-w-xs flex-1 font-mono"
         />
         <button type="submit" disabled={loading} className="btn-primary whitespace-nowrap">
-          {loading ? "Searching…" : "Track Now!"}
+          {loading ? "Searching…" : "Track"}
         </button>
       </form>
       {error && (
@@ -94,14 +94,17 @@ export function TrackTraceWidget({ variant = "strip", showResultsInline = true }
                 {result.updates.slice(0, 3).map((u, i) => (
                   <li key={i} className="flex gap-2">
                     <span className="text-primary">•</span>
-                    <span>{u.status}{u.location ? ` — ${u.location}` : ""}</span>
+                    <span>
+                      {u.status}
+                      {u.location ? ` · ${u.location}` : ""}
+                    </span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
           <Link href="/track" className="mt-3 inline-block text-sm font-medium text-primary hover:underline">
-            View full details →
+            Open full track page
           </Link>
         </div>
       )}

@@ -38,20 +38,20 @@ async function main() {
       pieces:            "4 boxes",
       weight:            "18 kg",
       dimensions:        "50 × 40 × 30 cm",
-      packageDesc:       "Electronic components — handle with care",
+      packageDesc:       "Electronic components (fragile)",
       declaredValue:     "USD 4,200",
       specialHandling:   "Fragile",
       // Delivery
       estimatedDelivery: new Date("2026-03-08"),
       signatureRequired: true,
-      notes: "Recipient available Mon–Fri only. Deliver to reception desk.",
+      notes: "Recipient available Mon to Fri only. Deliver to reception desk.",
       updates: [
         { status: "Order received",         location: "New York Processing Centre",          description: "Shipment booked and collected from sender" },
         { status: "Customs cleared",         location: "JFK Airport, New York",               description: "Export documentation approved" },
-        { status: "In Transit",              location: "JFK — London Heathrow (AA107)",       description: "Departed on scheduled flight" },
-        { status: "Arrived at destination",  location: "London Heathrow",                    description: "Cleared UK customs — no issues" },
+        { status: "In Transit",              location: "JFK to London Heathrow (AA107)",       description: "Departed on scheduled flight" },
+        { status: "Arrived at destination",  location: "London Heathrow",                    description: "Cleared UK customs, no issues" },
         { status: "Out for Delivery",        location: "Vectora London Hub",              description: "Assigned to delivery driver" },
-        { status: "Delivered",               location: "14 Canary Wharf, London",             description: "Signed for by reception. Delivered on time." },
+        { status: "Delivered",               location: "14 Canary Wharf, London",             description: "Signed for by reception." },
       ],
     },
     {
@@ -85,7 +85,7 @@ async function main() {
       updates: [
         { status: "Order received",  location: "Shanghai Warehouse",    description: "Container loaded and sealed" },
         { status: "Customs cleared", location: "Port of Shanghai",      description: "Export documentation processed" },
-        { status: "In Transit",      location: "South China Sea",       description: "Vessel: MSC Aurora — ETA Rotterdam in 22 days" },
+        { status: "In Transit",      location: "South China Sea",       description: "Vessel MSC Aurora, ETA Rotterdam in 22 days" },
         { status: "In Transit",      location: "Strait of Malacca",     description: "On schedule, no delays reported" },
       ],
     },
@@ -121,7 +121,7 @@ async function main() {
         { status: "Order received",  location: "Manchester Depot",              description: "Collected from sender's warehouse" },
         { status: "In Transit",      location: "Channel Tunnel, Folkestone",    description: "Passed UK border control" },
         { status: "In Transit",      location: "Calais Distribution Hub",       description: "Transferred to Paris delivery vehicle" },
-        { status: "Out for Delivery",location: "Paris — 1st Arrondissement",    description: "Driver en route, estimated arrival 9:30 am" },
+        { status: "Out for Delivery",location: "Paris, 1st Arrondissement",    description: "Driver en route, estimated arrival 9:30 am" },
       ],
     },
     {
@@ -145,7 +145,7 @@ async function main() {
       pieces:            "12 boxes",
       weight:            "42 kg",
       dimensions:        "30 × 25 × 20 cm per box",
-      packageDesc:       "Pharmaceutical supplies — temperature sensitive",
+      packageDesc:       "Pharmaceutical supplies (temperature sensitive)",
       declaredValue:     "USD 9,100",
       specialHandling:   "Keep Refrigerated",
       // Delivery
@@ -184,12 +184,12 @@ async function main() {
       // Delivery
       estimatedDelivery: new Date("2026-03-12"),
       signatureRequired: true,
-      notes: "Time sensitive — required for board meeting on delivery date.",
+      notes: "Time sensitive; required for board meeting on delivery date.",
       updates: [
         { status: "Order received",  location: "Toronto Pearson Express Hub",   description: "Priority shipment confirmed and collected" },
         { status: "Customs cleared", location: "Toronto Pearson Airport",       description: "Export documentation fast-tracked" },
         { status: "In Transit",      location: "Vancouver Connecting Hub",      description: "Transferred to Pacific route flight" },
-        { status: "In Transit",      location: "Over Pacific Ocean",            description: "AC837 en route — ETA Narita Airport in 9 hours" },
+        { status: "In Transit",      location: "Over Pacific Ocean",            description: "AC837 en route, ETA Narita Airport in 9 hours" },
       ],
     },
     {
@@ -222,10 +222,10 @@ async function main() {
       notes: null,
       updates: [
         { status: "Order received",         location: "Shenzhen Port",                              description: "Two containers booked and loaded" },
-        { status: "In Transit",             location: "South China Sea",                            description: "Vessel: Evergreen Honour — departed Shenzhen" },
+        { status: "In Transit",             location: "South China Sea",                            description: "Vessel Evergreen Honour departed Shenzhen" },
         { status: "In Transit",             location: "Suez Canal",                                 description: "Transit proceeding without delay" },
         { status: "Arrived at destination", location: "Port of Rotterdam",                         description: "Containers offloaded and cleared" },
-        { status: "In Transit",             location: "Rotterdam – Amsterdam road leg",             description: "Final delivery in progress" },
+        { status: "In Transit",             location: "Rotterdam to Amsterdam road leg",             description: "Final delivery in progress" },
         { status: "Delivered",              location: "Amsterdam Warehouse, Handelskade 48",        description: "Both containers unloaded and signed off by client." },
       ],
     },
@@ -244,7 +244,7 @@ async function main() {
         updates: { create: updates },
       },
     });
-    console.log("✓", created.trackingCode, `— ${created.status}`);
+    console.log("✓", created.trackingCode, created.status);
   }
 
   // Ensure default contact settings exist (singleton)
@@ -254,7 +254,7 @@ async function main() {
       data: {
         email: "contact@vectoralogistics.com",
         phone: "+44 20 7123 4567",
-        officeHoursLine1: "Mon – Fri, 8 am – 6 pm (GMT)",
+        officeHoursLine1: "Mon to Fri, 8 am to 6 pm (GMT)",
         officeHoursLine2: "Shipment tracking: 24/7 online",
       },
     });

@@ -10,7 +10,7 @@ function invoiceNumber(id: string, createdAt: Date) {
 }
 
 function fmtDate(d: Date | null | undefined) {
-  if (!d) return "—";
+  if (!d) return "-";
   return new Date(d).toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" });
 }
 
@@ -28,7 +28,7 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
 
   return (
     <div className="min-h-screen bg-slate-100 print:bg-white">
-      {/* Toolbar — hidden when printing */}
+      {/* Toolbar (hidden when printing) */}
       <div className="print:hidden border-b border-slate-200 bg-white px-6 py-4">
         <div className="mx-auto flex max-w-4xl items-center justify-between">
           <Link href={`/admin/shipments/${id}`} className="text-sm text-slate-500 hover:text-primary">
@@ -101,7 +101,7 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
                   {shipment.recipientPhone   && <p>{shipment.recipientPhone}</p>}
                 </>
               ) : (
-                <p className="italic text-slate-400">No consignee on file — edit shipment to add.</p>
+                <p className="italic text-slate-400">No consignee on file. Edit the shipment to add one.</p>
               )}
             </div>
           </div>
@@ -119,18 +119,18 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
                 ["Destination",          shipment.destination],
                 ["Current Status",       shipment.status],
                 ["Estimated Delivery",   fmtDate(shipment.estimatedDelivery)],
-                ["Package Type",         shipment.packageType ?? "—"],
-                ["Pieces",               shipment.pieces      ?? "—"],
-                ["Weight",               shipment.weight      ?? "—"],
-                ["Dimensions",           shipment.dimensions  ?? "—"],
-                ["Contents",             shipment.packageDesc ?? "—"],
-                ["Special Handling",     shipment.specialHandling ?? "—"],
-                ["Declared Value",       shipment.declaredValue   ?? "—"],
+                ["Package Type",         shipment.packageType ?? "-"],
+                ["Pieces",               shipment.pieces      ?? "-"],
+                ["Weight",               shipment.weight      ?? "-"],
+                ["Dimensions",           shipment.dimensions  ?? "-"],
+                ["Contents",             shipment.packageDesc ?? "-"],
+                ["Special Handling",     shipment.specialHandling ?? "-"],
+                ["Declared Value",       shipment.declaredValue   ?? "-"],
                 ["Signature Required",   shipment.signatureRequired ? "Yes" : "No"],
               ] as [string, string][]).map(([label, value]) => (
                 <tr key={label}>
                   <td className="w-2/5 bg-slate-50 px-5 py-3 font-medium text-slate-500 print:bg-gray-50">{label}</td>
-                  <td className={`px-5 py-3 font-medium ${label === "Declared Value" && value !== "—" ? "text-primary-dark" : "text-slate-900"}`}>
+                  <td className={`px-5 py-3 font-medium ${label === "Declared Value" && value !== "-" ? "text-primary-dark" : "text-slate-900"}`}>
                     {value}
                   </td>
                 </tr>
@@ -159,8 +159,8 @@ export default async function InvoicePage({ params }: { params: Promise<{ id: st
                       {new Date(u.createdAt).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })}
                     </td>
                     <td className="px-5 py-3 font-medium text-slate-900">{u.status}</td>
-                    <td className="px-5 py-3 text-slate-600">{u.location ?? "—"}</td>
-                    <td className="px-5 py-3 text-slate-500">{u.description ?? "—"}</td>
+                    <td className="px-5 py-3 text-slate-600">{u.location ?? "-"}</td>
+                    <td className="px-5 py-3 text-slate-500">{u.description ?? "-"}</td>
                   </tr>
                 ))}
               </tbody>

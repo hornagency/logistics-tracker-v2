@@ -1,7 +1,7 @@
 import { VectoraLogo } from "@/components/VectoraLogoMark";
 
 /**
- * Vectora Logistics letterhead — used on all printed documents.
+ * Vectora Logistics letterhead for printed documents.
  */
 export function VectoraLetterhead() {
   return (

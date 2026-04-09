@@ -22,7 +22,7 @@ export default function AdminError({
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v4m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
           </svg>
         </div>
-        <h2 className="mb-2 text-xl font-semibold text-slate-900">Vectora Admin — error</h2>
+        <h2 className="mb-2 text-xl font-semibold text-slate-900">Admin error</h2>
         <p className="mb-1 text-sm text-slate-500">Something went wrong loading this admin page.</p>
         {error.digest && (
           <p className="mb-4 rounded bg-slate-100 px-3 py-1.5 font-mono text-xs text-slate-400">

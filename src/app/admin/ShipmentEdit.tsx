@@ -314,7 +314,7 @@ export function ShipmentEdit({ shipment }: { shipment: Shipment }) {
             <div>
               <label className="block text-sm font-medium text-slate-700">Package Type</label>
               <select value={form.packageType} onChange={(e) => set("packageType", e.target.value)} className="input-field mt-1">
-                <option value="">— Select —</option>
+                <option value="">Select…</option>
                 <option>Box</option>
                 <option>Envelope</option>
                 <option>Pallet</option>
@@ -349,7 +349,7 @@ export function ShipmentEdit({ shipment }: { shipment: Shipment }) {
             <div>
               <label className="block text-sm font-medium text-slate-700">Special Handling</label>
               <select value={form.specialHandling} onChange={(e) => set("specialHandling", e.target.value)} className="input-field mt-1">
-                <option value="">— None —</option>
+                <option value="">None</option>
                 <option>Fragile</option>
                 <option>Keep Refrigerated</option>
                 <option>Keep Frozen</option>

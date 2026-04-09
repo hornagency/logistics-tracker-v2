@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { VectoraLogo } from "@/components/VectoraLogoMark";
+import { getContactSettings } from "@/lib/contact";
 
 const services = [
   { name: "Air Freight", href: "/#services" },
@@ -10,7 +11,10 @@ const services = [
   { name: "Packaging", href: "/#services" },
 ];
 
-export function Footer() {
+export async function Footer() {
+  const contact = await getContactSettings();
+  const telHref = `tel:${contact.phone.replace(/[^\d+]/g, "")}`;
+
   return (
     <footer className="border-t border-slate-200 bg-slate-900 text-slate-300">
       <div className="mx-auto max-w-6xl px-4 py-14">
@@ -21,7 +25,7 @@ export function Footer() {
               <VectoraLogo size="md" light />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              Vectora Logistics moves cargo by air, ocean, and road, with warehousing when you need it — for businesses of every size. Straight answers, clear tracking, and people who pick up the phone.
+              Air, ocean, and road freight, plus warehousing when the move needs it. Based in the UK with files you can track online.
             </p>
           </div>
 
@@ -54,18 +58,20 @@ export function Footer() {
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/track" className="hover:text-white transition-colors">Track a Shipment</Link></li>
               <li>
-                <a href="mailto:contact@vectoralogistics.com" className="hover:text-white transition-colors">
-                  contact@vectoralogistics.com
+                <a href={`mailto:${contact.email}`} className="hover:text-white transition-colors">
+                  {contact.email}
                 </a>
               </li>
               <li>
-                <a href="tel:+15550000000" className="hover:text-white transition-colors">+1 (555) 000-0000</a>
+                <a href={telHref} className="hover:text-white transition-colors">
+                  {contact.phone}
+                </a>
               </li>
             </ul>
             <div className="mt-5 rounded-lg bg-white/5 px-4 py-3 text-sm">
               <p className="font-medium text-white">Support Hours</p>
-              <p className="mt-1 text-slate-400">Mon – Fri · 8 am – 6 pm GMT</p>
-              <p className="text-slate-400">Shipment tracking: 24/7</p>
+              <p className="mt-1 text-slate-400">{contact.officeHoursLine1}</p>
+              {contact.officeHoursLine2 && <p className="text-slate-400">{contact.officeHoursLine2}</p>}
             </div>
           </div>
         </div>
@@ -74,9 +80,7 @@ export function Footer() {
           <p className="text-sm text-slate-500">
             © {new Date().getFullYear()} Vectora Logistics Ltd. All rights reserved.
           </p>
-          <p className="text-xs text-slate-600">
-            Freight you can actually track. People you can actually reach.
-          </p>
+          <p className="text-xs text-slate-600">Registered in the United Kingdom</p>
         </div>
       </div>
     </footer>

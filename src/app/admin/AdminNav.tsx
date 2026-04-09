@@ -101,7 +101,7 @@ export function AdminNav() {
           })}
         </nav>
 
-        {/* Right side — public site link + user + logout */}
+        {/* Right: public site, user, logout */}
         <div className="flex shrink-0 items-center gap-3">
           <Link
             href="/"

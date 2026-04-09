@@ -35,7 +35,7 @@ export default async function AdminPage() {
         <div>
           <h1 className="text-2xl font-bold text-slate-900">Dashboard</h1>
           <p className="mt-1 text-sm text-slate-500">
-            Overview of all Vectora shipments and live status.
+            Open shipments and counts by status.
           </p>
         </div>
         <Link href="/admin/shipments/new" className="btn-primary">

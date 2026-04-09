@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Vectora Logistics",
   },
   description:
-    "Vectora Logistics — fast, certified freight by air, ocean, and road. Track any shipment in real time with your VLA- code. Warehousing, supply chain, and packaging.",
+    "Air, ocean, and road freight from Vectora Logistics. Track shipments with a VLA code. Warehousing, supply chain help, and packaging.",
   openGraph: {
     type: "website",
     locale: "en_GB",
@@ -18,13 +18,12 @@ export const metadata: Metadata = {
     siteName: "Vectora Logistics",
     title: "Vectora Logistics | Air Freight, Ocean & Road Cargo",
     description:
-      "Air, ocean, and road freight with live VLA- tracking, warehousing, and supply-chain support.",
+      "Air, ocean, and road freight with online VLA tracking, warehousing, and supply chain support.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Vectora Logistics",
-    description:
-      "Air, ocean & road cargo — track every shipment with your VLA- code.",
+    description: "Air, ocean, and road cargo. Track shipments with your VLA code.",
   },
 };
 

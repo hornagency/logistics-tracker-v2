@@ -49,7 +49,7 @@ export default async function ReportsPage() {
               Shipments Report
             </h1>
             <p className="mt-1 text-sm text-slate-500">
-              Comprehensive logistics summary — all shipments as of {today}
+              Logistics summary: all shipments as of {today}
             </p>
           </div>
           <p className="text-sm text-slate-400">Generated: {today}</p>
@@ -95,7 +95,7 @@ export default async function ReportsPage() {
                   <tr key={s.id} className="hover:bg-slate-50 print:hover:bg-transparent">
                     <td className="px-4 py-3 text-slate-400">{i + 1}</td>
                     <td className="px-4 py-3 font-mono font-semibold text-slate-900">{s.trackingCode}</td>
-                    <td className="px-4 py-3 text-slate-600">{s.recipientName ?? <span className="italic text-slate-300">—</span>}</td>
+                    <td className="px-4 py-3 text-slate-600">{s.recipientName ?? <span className="italic text-slate-300">-</span>}</td>
                     <td className="px-4 py-3 text-slate-600 text-xs">{s.origin} → {s.destination}</td>
                     <td className="px-4 py-3 text-slate-600">{s.serviceType}</td>
                     <td className="px-4 py-3">
@@ -143,10 +143,10 @@ export default async function ReportsPage() {
 
         {/* Footer */}
         <div className="mt-10 border-t border-slate-200 pt-6 text-center text-xs text-slate-400">
-          <p className="font-medium text-slate-600">Vectora Logistics Ltd. — Confidential Report</p>
-          <p className="mt-1">This document contains proprietary logistics data. Not for public distribution.</p>
+          <p className="font-medium text-slate-600">Vectora Logistics Ltd. Confidential report</p>
+          <p className="mt-1">Internal use only.</p>
           <p className="mt-3 font-mono text-[10px] tracking-wide text-slate-300">
-            Generated {today} · {total} shipment{total !== 1 ? "s" : ""} · Vectora Logistics
+            Generated {today}. {total} shipment{total !== 1 ? "s" : ""}. Vectora Logistics.
           </p>
         </div>
       </div>

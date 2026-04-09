@@ -17,7 +17,7 @@ export function VectoraLogoMark({ className = "h-9 w-9" }: LogoMarkProps) {
       aria-hidden="true"
     >
       <rect width="40" height="40" rx="10" className="fill-primary" />
-      {/* Bold “V” — Vectora monogram; motion implied by angle */}
+      {/* Vectora monogram */}
       <path
         d="M12 28 L20 11 L28 28"
         stroke="white"

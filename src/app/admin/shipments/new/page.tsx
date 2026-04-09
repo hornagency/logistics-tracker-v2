@@ -84,7 +84,7 @@ export default function NewShipmentPage() {
     <div className="mx-auto max-w-3xl">
       <h1 className="text-2xl font-bold text-slate-900">New Shipment</h1>
       <p className="mt-1 text-sm text-slate-500">
-        Create a Vectora shipment record. The <span className="font-mono text-slate-700">VLA-</span> code is what the customer uses on the public Vectora Track &amp; Trace page.
+        New file in the system. The <span className="font-mono text-slate-700">VLA-</span> code is what you give the customer for the public track page.
       </p>
 
       <form onSubmit={handleSubmit} className="mt-6 space-y-6">
@@ -167,7 +167,7 @@ export default function NewShipmentPage() {
         {/* ── 2. Route ───────────────────────────────────── */}
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="font-semibold text-slate-900">Route</h2>
-          <p className="mt-0.5 text-xs text-slate-400">City and country only — for tracking display and documents.</p>
+          <p className="mt-0.5 text-xs text-slate-400">City and country only (tracking and documents).</p>
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
             <div>
               <label className="block text-sm font-medium text-slate-700">
@@ -255,7 +255,7 @@ export default function NewShipmentPage() {
             <div>
               <label className="block text-sm font-medium text-slate-700">Package Type</label>
               <select value={form.packageType} onChange={(e) => set("packageType", e.target.value)} className="input-field mt-1">
-                <option value="">— Select —</option>
+                <option value="">Select…</option>
                 <option>Box</option>
                 <option>Envelope</option>
                 <option>Pallet</option>
@@ -290,7 +290,7 @@ export default function NewShipmentPage() {
             <div>
               <label className="block text-sm font-medium text-slate-700">Special Handling</label>
               <select value={form.specialHandling} onChange={(e) => set("specialHandling", e.target.value)} className="input-field mt-1">
-                <option value="">— None —</option>
+                <option value="">None</option>
                 <option>Fragile</option>
                 <option>Keep Refrigerated</option>
                 <option>Keep Frozen</option>

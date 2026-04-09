@@ -66,7 +66,7 @@ export default function TrackPage() {
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-3xl font-bold md:text-4xl">Vectora Track &amp; Trace</h1>
             <p className="mt-3 text-slate-200">
-              Enter your Vectora <span className="font-mono font-medium">VLA-</span> tracking code below. We&apos;ll show current status, route, and every milestone we&apos;ve logged for your shipment.
+              Enter your <span className="font-mono font-medium">VLA-</span> code for current status and the lines we stored on your file.
             </p>
           </div>
         </div>
@@ -77,7 +77,7 @@ export default function TrackPage() {
         <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-bold text-slate-900">Look Up a Shipment</h2>
           <p className="mt-1 text-slate-600">
-            Your Vectora confirmation includes a <span className="font-mono text-slate-800">VLA-</span> code. Paste it here to see live status and history — no login required.
+            Your paperwork should list a <span className="font-mono text-slate-800">VLA-</span> code. Paste it here for status and history. No login.
           </p>
           <form onSubmit={handleSubmit} className="mt-4 flex flex-wrap items-center gap-2">
             <input
@@ -89,7 +89,7 @@ export default function TrackPage() {
               className="input-field max-w-xs flex-1 font-mono"
             />
             <button type="submit" disabled={loading} className="btn-primary whitespace-nowrap">
-              {loading ? "Searching…" : "Track Now!"}
+              {loading ? "Searching…" : "Track"}
             </button>
           </form>
         </div>

@@ -23,7 +23,18 @@ export async function POST(request: Request) {
       { ok: true },
       { headers: { "Set-Cookie": cookie } }
     );
-  } catch {
+  } catch (e) {
+    console.error("[api/admin/auth/login]", e);
+    const msg = e instanceof Error ? e.message : "";
+    if (msg.startsWith("[Vectora]")) {
+      return NextResponse.json(
+        {
+          error:
+            "Admin auth is not configured for production. Set ADMIN_SECRET (openssl rand -hex 32), ADMIN_USERNAME, and ADMIN_PASSWORD on the host (e.g. Vercel Environment Variables), then redeploy.",
+        },
+        { status: 503 }
+      );
+    }
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
